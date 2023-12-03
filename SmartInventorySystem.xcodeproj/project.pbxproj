@@ -11,6 +11,7 @@
 		908A340A2B1CEAC600FE47AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34092B1CEAC600FE47AD /* ContentView.swift */; };
 		908A340C2B1CEAC800FE47AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340B2B1CEAC800FE47AD /* Assets.xcassets */; };
 		908A340F2B1CEAC800FE47AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */; };
+		908A34162B1CEB8D00FE47AD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		908A34092B1CEAC600FE47AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		908A340B2B1CEAC800FE47AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				908A34092B1CEAC600FE47AD /* ContentView.swift */,
 				908A340B2B1CEAC800FE47AD /* Assets.xcassets */,
 				908A340D2B1CEAC800FE47AD /* Preview Content */,
+				908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */,
 			);
 			path = SmartInventorySystem;
 			sourceTree = "<group>";
@@ -109,6 +112,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 908A33FB2B1CEAC600FE47AD;
 			productRefGroup = 908A34052B1CEAC600FE47AD /* Products */;
@@ -127,6 +131,7 @@
 			files = (
 				908A340F2B1CEAC800FE47AD /* Preview Assets.xcassets in Resources */,
 				908A340C2B1CEAC800FE47AD /* Assets.xcassets in Resources */,
+				908A34162B1CEB8D00FE47AD /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +285,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +315,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
