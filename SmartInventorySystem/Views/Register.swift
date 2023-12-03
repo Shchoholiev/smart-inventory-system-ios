@@ -51,7 +51,8 @@ struct RegisterView: View {
                     .font(.system(size: 18, weight: .bold, design: .default))
                     .padding()
                     .foregroundColor(.white)
-                    .background(isFormValid ? .blue : .gray)
+                    .background(.blue)
+                    .opacity(isFormValid ? 1 : 0.5)
                     .cornerRadius(40)
             }
             .disabled(!isFormValid)

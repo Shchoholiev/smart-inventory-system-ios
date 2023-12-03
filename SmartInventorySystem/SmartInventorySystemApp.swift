@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct SmartInventorySystemApp: App {
+    @StateObject private var httpClient = HttpClient.shared
+    
     var body: some Scene {
         WindowGroup {
-            RegisterView()
+            if (httpClient.isAuthenticated) {
+                Text("Hey")
+            } else {
+                RegisterView()
+            }
         }
     }
 }

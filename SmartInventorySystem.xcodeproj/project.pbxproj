@@ -13,6 +13,11 @@
 		908A34162B1CEB8D00FE47AD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */; };
 		908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341A2B1CFCF300FE47AD /* RegisterModel.swift */; };
 		908A341D2B1CFD4200FE47AD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341C2B1CFD4200FE47AD /* Register.swift */; };
+		908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341F2B1D118E00FE47AD /* HttpClient.swift */; };
+		908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34212B1D131F00FE47AD /* TokensModel.swift */; };
+		908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34242B1D138A00FE47AD /* JwtTokensService.swift */; };
+		908A34282B1D142300FE47AD /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 908A34272B1D142300FE47AD /* JWTDecode */; };
+		908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A342A2B1D15AB00FE47AD /* GlobalUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +28,10 @@
 		908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		908A341A2B1CFCF300FE47AD /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		908A341C2B1CFD4200FE47AD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		908A341F2B1D118E00FE47AD /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		908A34212B1D131F00FE47AD /* TokensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensModel.swift; sourceTree = "<group>"; };
+		908A34242B1D138A00FE47AD /* JwtTokensService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtTokensService.swift; sourceTree = "<group>"; };
+		908A342A2B1D15AB00FE47AD /* GlobalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908A34282B1D142300FE47AD /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +65,8 @@
 		908A34062B1CEAC600FE47AD /* SmartInventorySystem */ = {
 			isa = PBXGroup;
 			children = (
+				908A34292B1D159100FE47AD /* GlobalInstances */,
+				908A341E2B1D117200FE47AD /* Network */,
 				908A34182B1CFCA800FE47AD /* Models */,
 				908A34172B1CFC2300FE47AD /* Views */,
 				908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */,
@@ -93,8 +105,26 @@
 			isa = PBXGroup;
 			children = (
 				908A341A2B1CFCF300FE47AD /* RegisterModel.swift */,
+				908A34212B1D131F00FE47AD /* TokensModel.swift */,
 			);
 			path = Identity;
+			sourceTree = "<group>";
+		};
+		908A341E2B1D117200FE47AD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				908A341F2B1D118E00FE47AD /* HttpClient.swift */,
+				908A34242B1D138A00FE47AD /* JwtTokensService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		908A34292B1D159100FE47AD /* GlobalInstances */ = {
+			isa = PBXGroup;
+			children = (
+				908A342A2B1D15AB00FE47AD /* GlobalUser.swift */,
+			);
+			path = GlobalInstances;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +143,9 @@
 			dependencies = (
 			);
 			name = SmartInventorySystem;
+			packageProductDependencies = (
+				908A34272B1D142300FE47AD /* JWTDecode */,
+			);
 			productName = SmartInventorySystem;
 			productReference = 908A34042B1CEAC600FE47AD /* SmartInventorySystem.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +175,9 @@
 				uk,
 			);
 			mainGroup = 908A33FB2B1CEAC600FE47AD;
+			packageReferences = (
+				908A34262B1D142300FE47AD /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
+			);
 			productRefGroup = 908A34052B1CEAC600FE47AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,7 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
+				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
+				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
 				908A341D2B1CFD4200FE47AD /* Register.swift in Sources */,
+				908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */,
+				908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */,
 				908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +419,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		908A34262B1D142300FE47AD /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		908A34272B1D142300FE47AD /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 908A34262B1D142300FE47AD /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;
+			productName = JWTDecode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 908A33FC2B1CEAC600FE47AD /* Project object */;
 }
