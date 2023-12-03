@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */; };
-		908A340A2B1CEAC600FE47AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34092B1CEAC600FE47AD /* ContentView.swift */; };
 		908A340C2B1CEAC800FE47AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340B2B1CEAC800FE47AD /* Assets.xcassets */; };
 		908A340F2B1CEAC800FE47AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */; };
 		908A34162B1CEB8D00FE47AD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */; };
+		908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341A2B1CFCF300FE47AD /* RegisterModel.swift */; };
+		908A341D2B1CFD4200FE47AD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341C2B1CFD4200FE47AD /* Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		908A34042B1CEAC600FE47AD /* SmartInventorySystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartInventorySystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartInventorySystemApp.swift; sourceTree = "<group>"; };
-		908A34092B1CEAC600FE47AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		908A340B2B1CEAC800FE47AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		908A341A2B1CFCF300FE47AD /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		908A341C2B1CFD4200FE47AD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +55,9 @@
 		908A34062B1CEAC600FE47AD /* SmartInventorySystem */ = {
 			isa = PBXGroup;
 			children = (
+				908A34182B1CFCA800FE47AD /* Models */,
+				908A34172B1CFC2300FE47AD /* Views */,
 				908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */,
-				908A34092B1CEAC600FE47AD /* ContentView.swift */,
 				908A340B2B1CEAC800FE47AD /* Assets.xcassets */,
 				908A340D2B1CEAC800FE47AD /* Preview Content */,
 				908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */,
@@ -68,6 +71,30 @@
 				908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		908A34172B1CFC2300FE47AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				908A341C2B1CFD4200FE47AD /* Register.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		908A34182B1CFCA800FE47AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				908A34192B1CFCAD00FE47AD /* Identity */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		908A34192B1CFCAD00FE47AD /* Identity */ = {
+			isa = PBXGroup;
+			children = (
+				908A341A2B1CFCF300FE47AD /* RegisterModel.swift */,
+			);
+			path = Identity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				908A340A2B1CEAC600FE47AD /* ContentView.swift in Sources */,
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
+				908A341D2B1CFD4200FE47AD /* Register.swift in Sources */,
+				908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Email" : {
+
+    },
     "Hello, world!" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -17,6 +20,15 @@
           }
         }
       }
+    },
+    "Name" : {
+
+    },
+    "Password" : {
+
+    },
+    "Register" : {
+
     }
   },
   "version" : "1.0"

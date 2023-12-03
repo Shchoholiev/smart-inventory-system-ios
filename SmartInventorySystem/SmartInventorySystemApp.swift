@@ -11,7 +11,7 @@ import SwiftUI
 struct SmartInventorySystemApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegisterView()
         }
     }
 }
