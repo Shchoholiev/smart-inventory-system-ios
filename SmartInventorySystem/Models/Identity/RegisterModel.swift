@@ -7,9 +7,16 @@
 
 import Foundation
 
-class RegistrationModel: ObservableObject {
-    @Published var name: String = ""
-    @Published var email: String = ""
-    @Published var phone: String = ""
-    @Published var password: String = ""
+class RegisterModel: ObservableObject, Codable {
+    var name: String?
+    var email: String?
+    var phone: String?
+    var password: String
+    
+    public init(_ name: String? = nil, _ email: String? = nil, _ phone: String? = nil, _ password: String) {
+        self.name = name
+        self.email = email
+        self.phone = phone
+        self.password = password
+    }
 }

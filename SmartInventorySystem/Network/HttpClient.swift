@@ -35,24 +35,48 @@ class HttpClient: ObservableObject {
         accessToken = nil
     }
     
+    func setAuthenticated(_ value: Bool) async {
+        // UI updates must be done in main thread
+        await MainActor.run {
+            isAuthenticated = value
+        }
+    }
+    
     private func sendAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn, _ httpMethod: HttpMethod) async throws -> TOut {
         do {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(data)
             
             var request = URLRequest(url: baseUrl.appendingPathComponent(path))
+            print(baseUrl.appendingPathComponent(path))
             request.httpMethod = httpMethod.rawValue
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             if let jwt = accessToken {
                 request.setValue("Bearer \(jwt)", forHTTPHeaderField: "Authorization")
             }
             request.httpBody = jsonData
+            let jsonDataStr = String(data: jsonData, encoding: .utf8 )
+            print("sendAsync input")
+            print(jsonDataStr)
             
-            let (data, _) = try await URLSession.shared.data(for: request)
             let decoder = JSONDecoder()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            
+            let (data, response) = try await URLSession.shared.data(for: request)
+            let httpResponse = response as! HTTPURLResponse
+            if !(200...299).contains(httpResponse.statusCode) {
+                print("Response HTTP Status code: \(httpResponse.statusCode)")
+                
+                let httpError = try decoder.decode(HttpError.self, from: data)
+                throw httpError
+            }
+            
+            let str = String(data: data, encoding: .utf8 )
+            print("sendAsync result")
+            print(str)
+            
             let object = try decoder.decode(TOut.self, from: data)
             
             return object
@@ -76,7 +100,7 @@ class HttpClient: ObservableObject {
             GlobalUser.shared.setUserFromJwt(tokens.accessToken)
             accessToken = tokens.accessToken
         } else {
-            isAuthenticated = false
+            await setAuthenticated(false)
         }
     }
     

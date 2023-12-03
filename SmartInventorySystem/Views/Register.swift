@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct RegisterView: View {
-    @StateObject var registrationModel = RegistrationModel()
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var phone: String = ""
+    @State private var password: String = ""
+    
+    @State private var errorMessage: String? = nil
+    
+    private var usersService = UsersSerice()
 
     var body: some View {
         VStack {
             Text("Register")
                 .font(.largeTitle)
 
-            TextField("Name", text: $registrationModel.name)
+            TextField("Name", text: $name)
                 .padding(12)
                 .foregroundColor(.primary)
                 .cornerRadius(7)
@@ -25,7 +32,7 @@ struct RegisterView: View {
                 )
                 .padding(7)
 
-            TextField("Email", text: $registrationModel.email)
+            TextField("Email", text: $email)
                 .padding(12)
                 .foregroundColor(.primary)
                 .cornerRadius(7)
@@ -35,7 +42,17 @@ struct RegisterView: View {
                 )
                 .padding(7)
 
-            SecureField("Password", text: $registrationModel.password)
+            TextField("Phone", text: $phone)
+                .padding(12)
+                .foregroundColor(.primary)
+                .cornerRadius(7)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 7)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .padding(7)
+
+            SecureField("Password", text: $password)
                 .padding(12)
                 .foregroundColor(.primary)
                 .cornerRadius(7)
@@ -57,19 +74,30 @@ struct RegisterView: View {
             }
             .disabled(!isFormValid)
             .padding()
+            
+            if let errorMessage = errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .padding()
+            }
         }
         .padding(30)
     }
     
     var isFormValid: Bool {
-        (!registrationModel.email.isEmpty
-         || !registrationModel.phone.isEmpty)
-        && !registrationModel.password.isEmpty
+        (!email.isEmpty || !phone.isEmpty) && !password.isEmpty
     }
 
     func registerUser() {
-        // Handle user registration logic here
-        // Access user input through registrationModel.username, registrationModel.email, etc.
+        let registerModel = RegisterModel(name, email, phone, password)
+        Task {
+            do {
+                _ = try await usersService.register(registerModel)
+                errorMessage = nil
+            } catch let httpError as HttpError {
+                errorMessage = httpError.message
+            }
+        }
     }
 }
 

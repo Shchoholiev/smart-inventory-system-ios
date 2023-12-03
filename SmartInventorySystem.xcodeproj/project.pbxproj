@@ -18,6 +18,9 @@
 		908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34242B1D138A00FE47AD /* JwtTokensService.swift */; };
 		908A34282B1D142300FE47AD /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 908A34272B1D142300FE47AD /* JWTDecode */; };
 		908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A342A2B1D15AB00FE47AD /* GlobalUser.swift */; };
+		908A34312B1D2C9F00FE47AD /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34302B1D2C9F00FE47AD /* UsersService.swift */; };
+		908A34332B1D2D1300FE47AD /* ServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34322B1D2D1300FE47AD /* ServiceBase.swift */; };
+		908A34352B1D39E900FE47AD /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34342B1D39E900FE47AD /* HttpError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		908A34212B1D131F00FE47AD /* TokensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensModel.swift; sourceTree = "<group>"; };
 		908A34242B1D138A00FE47AD /* JwtTokensService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtTokensService.swift; sourceTree = "<group>"; };
 		908A342A2B1D15AB00FE47AD /* GlobalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUser.swift; sourceTree = "<group>"; };
+		908A34302B1D2C9F00FE47AD /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
+		908A34322B1D2D1300FE47AD /* ServiceBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBase.swift; sourceTree = "<group>"; };
+		908A34342B1D39E900FE47AD /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 		908A34062B1CEAC600FE47AD /* SmartInventorySystem */ = {
 			isa = PBXGroup;
 			children = (
+				908A342F2B1D2C3900FE47AD /* Services */,
 				908A34292B1D159100FE47AD /* GlobalInstances */,
 				908A341E2B1D117200FE47AD /* Network */,
 				908A34182B1CFCA800FE47AD /* Models */,
@@ -115,6 +122,7 @@
 			children = (
 				908A341F2B1D118E00FE47AD /* HttpClient.swift */,
 				908A34242B1D138A00FE47AD /* JwtTokensService.swift */,
+				908A34342B1D39E900FE47AD /* HttpError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -125,6 +133,15 @@
 				908A342A2B1D15AB00FE47AD /* GlobalUser.swift */,
 			);
 			path = GlobalInstances;
+			sourceTree = "<group>";
+		};
+		908A342F2B1D2C3900FE47AD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				908A34302B1D2C9F00FE47AD /* UsersService.swift */,
+				908A34322B1D2D1300FE47AD /* ServiceBase.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,11 +224,14 @@
 			files = (
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
+				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
 				908A341D2B1CFD4200FE47AD /* Register.swift in Sources */,
 				908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */,
 				908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */,
 				908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */,
+				908A34312B1D2C9F00FE47AD /* UsersService.swift in Sources */,
+				908A34332B1D2D1300FE47AD /* ServiceBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
