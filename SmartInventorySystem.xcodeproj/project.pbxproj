@@ -12,7 +12,7 @@
 		908A340F2B1CEAC800FE47AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */; };
 		908A34162B1CEB8D00FE47AD /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */; };
 		908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341A2B1CFCF300FE47AD /* RegisterModel.swift */; };
-		908A341D2B1CFD4200FE47AD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341C2B1CFD4200FE47AD /* Register.swift */; };
+		908A341D2B1CFD4200FE47AD /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341C2B1CFD4200FE47AD /* RegisterView.swift */; };
 		908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A341F2B1D118E00FE47AD /* HttpClient.swift */; };
 		908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34212B1D131F00FE47AD /* TokensModel.swift */; };
 		908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34242B1D138A00FE47AD /* JwtTokensService.swift */; };
@@ -30,7 +30,7 @@
 		908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		908A341A2B1CFCF300FE47AD /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
-		908A341C2B1CFD4200FE47AD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		908A341C2B1CFD4200FE47AD /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		908A341F2B1D118E00FE47AD /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		908A34212B1D131F00FE47AD /* TokensModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensModel.swift; sourceTree = "<group>"; };
 		908A34242B1D138A00FE47AD /* JwtTokensService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JwtTokensService.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		908A34172B1CFC2300FE47AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				908A341C2B1CFD4200FE47AD /* Register.swift */,
+				908A341C2B1CFD4200FE47AD /* RegisterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,7 +226,7 @@
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
 				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
-				908A341D2B1CFD4200FE47AD /* Register.swift in Sources */,
+				908A341D2B1CFD4200FE47AD /* RegisterView.swift in Sources */,
 				908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */,
 				908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */,
 				908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */,

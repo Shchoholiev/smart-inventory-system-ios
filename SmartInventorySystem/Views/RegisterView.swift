@@ -15,7 +15,13 @@ struct RegisterView: View {
     
     @State private var errorMessage: String? = nil
     
+    @Binding var showLogin: Bool
+    
     private var usersService = UsersSerice()
+    
+    public init(showLogin: Binding<Bool>) {
+        self._showLogin = showLogin
+    }
 
     var body: some View {
         VStack {
@@ -61,19 +67,30 @@ struct RegisterView: View {
                         .stroke(Color.gray, lineWidth: 1)
                 )
                 .padding(7)
-
-            Button(action: registerUser) {
-                Text("Register")
-                    .frame(minWidth: 0, maxWidth: 100)
-                    .font(.system(size: 18, weight: .bold, design: .default))
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(.blue)
-                    .opacity(isFormValid ? 1 : 0.5)
-                    .cornerRadius(40)
+            
+            HStack {
+                Button(action: registerUser) {
+                    Text("Register")
+                        .frame(minWidth: 0, maxWidth: 100)
+                        .font(.system(size: 18, weight: .bold, design: .default))
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(.blue)
+                        .opacity(isFormValid ? 1 : 0.5)
+                        .cornerRadius(40)
+                }
+                .disabled(!isFormValid)
+                .padding()
+                
+                Button(action: {
+                    showLogin = true
+                }) {
+                    Text("Login")
+                        .foregroundColor(.blue)
+                        .underline()
+                }
+                .padding()
             }
-            .disabled(!isFormValid)
-            .padding()
             
             if let errorMessage = errorMessage {
                 Text(errorMessage)
@@ -103,6 +120,6 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        RegisterView(showLogin: .constant(false))
     }
 }
