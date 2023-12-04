@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct SmartInventorySystemApp: App {
+    @StateObject private var httpClient = HttpClient.shared
+    
+    @State var showLogin: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if (httpClient.isAuthenticated) {
+                Text("Hey")
+            } else {
+                if showLogin {
+                    LoginView(showLogin: $showLogin)
+                } else {
+                    RegisterView(showLogin: $showLogin)
+                }
+            }
         }
     }
 }
