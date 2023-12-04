@@ -19,7 +19,7 @@ struct SmartInventorySystemApp: App {
                 Text("Hey")
             } else {
                 if showLogin {
-                    Text("Login")
+                    LoginView(showLogin: $showLogin)
                 } else {
                     RegisterView(showLogin: $showLogin)
                 }

@@ -116,7 +116,7 @@ class HttpClient: ObservableObject {
     
     private func refreshTokens(_ tokens: TokensModel) async -> TokensModel? {
         do {
-            let tokens: TokensModel = try await postAsync("/tokens/refresh", tokens)
+            let tokens: TokensModel = try await sendAsync("/tokens/refresh", tokens, .post)
             return tokens
         } catch {
             print("An error occurred: \(error)")
