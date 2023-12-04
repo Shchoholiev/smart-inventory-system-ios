@@ -13,10 +13,16 @@ struct SmartInventorySystemApp: App {
     
     @State var showLogin: Bool = false
     
+    let groupsService = GroupsService()
+    
     var body: some Scene {
         WindowGroup {
             if (httpClient.isAuthenticated) {
-                Text("Hey")
+                if groupsService.getGroupId() != nil {
+                    Text("groups")
+                } else {
+                    GroupCreationView()
+                }
             } else {
                 if showLogin {
                     LoginView(showLogin: $showLogin)

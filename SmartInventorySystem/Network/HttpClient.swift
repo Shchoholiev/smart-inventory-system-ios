@@ -33,6 +33,7 @@ class HttpClient: ObservableObject {
         isAuthenticated = false
         jwtTokensService.clearTokensInKeychain()
         accessToken = nil
+        UserDefaults.standard.removeObject(forKey: "groupId")
     }
     
     func setAuthenticated(_ value: Bool) async {

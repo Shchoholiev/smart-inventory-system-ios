@@ -23,6 +23,9 @@
 		908A34352B1D39E900FE47AD /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34342B1D39E900FE47AD /* HttpError.swift */; };
 		908A34372B1D617500FE47AD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34362B1D617500FE47AD /* LoginView.swift */; };
 		908A34392B1D627700FE47AD /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34382B1D627700FE47AD /* LoginModel.swift */; };
+		908A343B2B1D796B00FE47AD /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A343A2B1D796B00FE47AD /* GroupsService.swift */; };
+		908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A343E2B1D7B6D00FE47AD /* Group.swift */; };
+		908A34412B1D7C4400FE47AD /* GroupCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34402B1D7C4400FE47AD /* GroupCreationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		908A34342B1D39E900FE47AD /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		908A34362B1D617500FE47AD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		908A34382B1D627700FE47AD /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		908A343A2B1D796B00FE47AD /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		908A343E2B1D7B6D00FE47AD /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		908A34402B1D7C4400FE47AD /* GroupCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 			children = (
 				908A341C2B1CFD4200FE47AD /* RegisterView.swift */,
 				908A34362B1D617500FE47AD /* LoginView.swift */,
+				908A34402B1D7C4400FE47AD /* GroupCreationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				908A34192B1CFCAD00FE47AD /* Identity */,
+				908A343E2B1D7B6D00FE47AD /* Group.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 			children = (
 				908A34302B1D2C9F00FE47AD /* UsersService.swift */,
 				908A34322B1D2D1300FE47AD /* ServiceBase.swift */,
+				908A343A2B1D796B00FE47AD /* GroupsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -231,13 +240,16 @@
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
 				908A34392B1D627700FE47AD /* LoginModel.swift in Sources */,
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
+				908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */,
 				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
 				908A341D2B1CFD4200FE47AD /* RegisterView.swift in Sources */,
+				908A34412B1D7C4400FE47AD /* GroupCreationView.swift in Sources */,
 				908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */,
 				908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */,
 				908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */,
 				908A34372B1D617500FE47AD /* LoginView.swift in Sources */,
+				908A343B2B1D796B00FE47AD /* GroupsService.swift in Sources */,
 				908A34312B1D2C9F00FE47AD /* UsersService.swift in Sources */,
 				908A34332B1D2D1300FE47AD /* ServiceBase.swift in Sources */,
 			);

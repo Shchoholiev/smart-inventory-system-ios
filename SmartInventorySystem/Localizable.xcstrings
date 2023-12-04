@@ -1,7 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Create Group" : {
+
+    },
+    "Description" : {
+
+    },
     "Email" : {
+
+    },
+    "Group Name" : {
+
+    },
+    "groups" : {
 
     },
     "Hello, world!" : {
@@ -21,7 +33,7 @@
         }
       }
     },
-    "Hey" : {
+    "If you want to join a group provide your email or phone to the owner of the group." : {
 
     },
     "Login" : {
