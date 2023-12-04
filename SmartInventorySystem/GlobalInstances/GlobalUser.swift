@@ -8,7 +8,7 @@
 import Foundation
 import JWTDecode
 
-class GlobalUser {
+class GlobalUser: ObservableObject {
     static let shared = GlobalUser()
     
     var id: String?
@@ -16,6 +16,8 @@ class GlobalUser {
     var email: String?
     var phone: String?
     var roles: [String] = []
+    
+    @Published var groupId: String?
     
     func setUserFromJwt(_ token: String) {
         do {
@@ -29,8 +31,22 @@ class GlobalUser {
             if let roles = jwt.claim(name: "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").array {
                 self.roles = roles
             }
+            
+            let groupId = UserDefaults.standard.string(forKey: "groupId")
+            if let id = groupId {
+                Task {
+                    await setGroupId(id)
+                }
+            }
         } catch {
             print(error)
+        }
+    }
+    
+    func setGroupId(_ value: String) async {
+        UserDefaults.standard.set(value, forKey: "groupId")
+        await MainActor.run {
+            groupId = value
         }
     }
 }

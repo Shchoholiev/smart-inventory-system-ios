@@ -28,6 +28,8 @@ class UsersSerice: ServiceBase {
         jwtService.storeTokensInKeychain(tokens: tokens)
         await HttpClient.shared.setAuthenticated(true)
         
+        // TODO: Pull current group id
+        
         return true
     }
 }

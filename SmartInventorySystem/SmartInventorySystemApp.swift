@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct SmartInventorySystemApp: App {
     @StateObject private var httpClient = HttpClient.shared
+    @StateObject private var globalUser = GlobalUser.shared
     
     @State var showLogin: Bool = false
     
@@ -18,7 +19,7 @@ struct SmartInventorySystemApp: App {
     var body: some Scene {
         WindowGroup {
             if (httpClient.isAuthenticated) {
-                if groupsService.getGroupId() != nil {
+                if globalUser.groupId != nil {
                     Text("groups")
                 } else {
                     GroupCreationView()

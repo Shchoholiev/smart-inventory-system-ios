@@ -36,6 +36,7 @@ class HttpClient: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "groupId")
     }
     
+    // TODO: move to global user
     func setAuthenticated(_ value: Bool) async {
         // UI updates must be done in main thread
         await MainActor.run {

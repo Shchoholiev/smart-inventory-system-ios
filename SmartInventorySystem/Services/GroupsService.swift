@@ -15,12 +15,8 @@ class GroupsService: ServiceBase {
 
     func createGroup(_ group: Group) async throws -> Group {
         let createdGroup: Group = try await HttpClient.shared.postAsync("\(baseUrl)", group)
-        UserDefaults.standard.set(createdGroup.id, forKey: "groupId")
+        await GlobalUser.shared.setGroupId(createdGroup.id)
         
         return createdGroup
-    }
-    
-    public func getGroupId() -> String? {
-        return UserDefaults.standard.string(forKey: "groupId")
     }
 }
