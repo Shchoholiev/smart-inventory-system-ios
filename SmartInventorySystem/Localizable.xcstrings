@@ -1,19 +1,31 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add User" : {
+
+    },
     "Create Group" : {
 
     },
     "Description" : {
 
     },
+    "Devices" : {
+
+    },
+    "Edit" : {
+
+    },
     "Email" : {
 
     },
-    "Group Name" : {
+    "Email or phone" : {
 
     },
-    "groups" : {
+    "Group" : {
+
+    },
+    "Group Name" : {
 
     },
     "Hello, world!" : {
@@ -49,6 +61,15 @@
 
     },
     "Register" : {
+
+    },
+    "Save" : {
+
+    },
+    "Second Tab" : {
+
+    },
+    "Your Group" : {
 
     }
   },

@@ -28,6 +28,14 @@ class UsersSerice: ServiceBase {
         jwtService.storeTokensInKeychain(tokens: tokens)
         await HttpClient.shared.setAuthenticated(true)
         
+        // TODO: Pull current group id
+        
         return true
+    }
+    
+    func getUser(_ username: String) async throws -> User {
+        let user: User = try await HttpClient.shared.getAsync("\(baseUrl)/\(username)")
+        
+        return user
     }
 }

@@ -19,6 +19,16 @@ class HttpClient: ObservableObject {
     
     @Published var isAuthenticated = false
     
+    func getAsync<TOut: Decodable>(_ path: String) async throws -> TOut {
+        await self.checkAccessTokenAsync()
+        return try await sendAsync(path, nil as Dummy?, .get)
+    }
+    
+    func deleteAsync<TOut: Decodable>(_ path: String) async throws -> TOut {
+        await self.checkAccessTokenAsync()
+        return try await sendAsync(path, nil as Dummy?, .delete)
+    }
+    
     func postAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn) async throws -> TOut {
         await self.checkAccessTokenAsync()
         return try await sendAsync(path, data, .post)
@@ -36,6 +46,7 @@ class HttpClient: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "groupId")
     }
     
+    // TODO: move to global user
     func setAuthenticated(_ value: Bool) async {
         // UI updates must be done in main thread
         await MainActor.run {
@@ -43,11 +54,12 @@ class HttpClient: ObservableObject {
         }
     }
     
-    private func sendAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn, _ httpMethod: HttpMethod) async throws -> TOut {
+    func checkAuthentication() async {
+        await checkAccessTokenAsync()
+    }
+    
+    private func sendAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn?, _ httpMethod: HttpMethod) async throws -> TOut {
         do {
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(data)
-            
             var request = URLRequest(url: baseUrl.appendingPathComponent(path))
             print(baseUrl.appendingPathComponent(path))
             request.httpMethod = httpMethod.rawValue
@@ -55,20 +67,26 @@ class HttpClient: ObservableObject {
             if let jwt = accessToken {
                 request.setValue("Bearer \(jwt)", forHTTPHeaderField: "Authorization")
             }
-            request.httpBody = jsonData
-            let jsonDataStr = String(data: jsonData, encoding: .utf8 )
-            print("sendAsync input")
-            print(jsonDataStr)
+            
+            if let inputData = data {
+                let jsonEncoder = JSONEncoder()
+                let jsonData = try jsonEncoder.encode(inputData)
+                request.httpBody = jsonData
+                
+                let jsonDataStr = String(data: jsonData, encoding: .utf8 )
+                print("sendAsync input")
+                print(jsonDataStr)
+            }
+            
+            let (data, response) = try await URLSession.shared.data(for: request)
             
             let decoder = JSONDecoder()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             
-            let (data, response) = try await URLSession.shared.data(for: request)
             let httpResponse = response as! HTTPURLResponse
             if !(200...299).contains(httpResponse.statusCode) {
-                print("Response HTTP Status code: \(httpResponse.statusCode)")
                 
                 let httpError = try decoder.decode(HttpError.self, from: data)
                 throw httpError
@@ -78,9 +96,13 @@ class HttpClient: ObservableObject {
             print("sendAsync result")
             print(str)
             
-            let object = try decoder.decode(TOut.self, from: data)
-            
-            return object
+            if httpMethod == .delete {
+                return Dummy() as! TOut
+            } else {
+                let object = try decoder.decode(TOut.self, from: data)
+                
+                return object
+            }
         } catch {
             print(error)
             throw error
@@ -100,6 +122,7 @@ class HttpClient: ObservableObject {
         if let tokens = tokensModel {
             GlobalUser.shared.setUserFromJwt(tokens.accessToken)
             accessToken = tokens.accessToken
+            await setAuthenticated(true)
         } else {
             await setAuthenticated(false)
         }
@@ -151,4 +174,9 @@ enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"
+    case delete = "DELETE"
+}
+
+//MARK: - Used to pass empty data in sendAsync() from getAsync()
+struct Dummy: Codable {
 }
