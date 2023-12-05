@@ -24,6 +24,11 @@ class HttpClient: ObservableObject {
         return try await sendAsync(path, nil as Dummy?, .get)
     }
     
+    func deleteAsync<TOut: Decodable>(_ path: String) async throws -> TOut {
+        await self.checkAccessTokenAsync()
+        return try await sendAsync(path, nil as Dummy?, .delete)
+    }
+    
     func postAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn) async throws -> TOut {
         await self.checkAccessTokenAsync()
         return try await sendAsync(path, data, .post)
@@ -65,7 +70,7 @@ class HttpClient: ObservableObject {
             
             if let inputData = data {
                 let jsonEncoder = JSONEncoder()
-                let jsonData = try jsonEncoder.encode(data)
+                let jsonData = try jsonEncoder.encode(inputData)
                 request.httpBody = jsonData
                 
                 let jsonDataStr = String(data: jsonData, encoding: .utf8 )
@@ -73,15 +78,15 @@ class HttpClient: ObservableObject {
                 print(jsonDataStr)
             }
             
+            let (data, response) = try await URLSession.shared.data(for: request)
+            
             let decoder = JSONDecoder()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             
-            let (data, response) = try await URLSession.shared.data(for: request)
             let httpResponse = response as! HTTPURLResponse
             if !(200...299).contains(httpResponse.statusCode) {
-                print("Response HTTP Status code: \(httpResponse.statusCode)")
                 
                 let httpError = try decoder.decode(HttpError.self, from: data)
                 throw httpError
@@ -91,9 +96,13 @@ class HttpClient: ObservableObject {
             print("sendAsync result")
             print(str)
             
-            let object = try decoder.decode(TOut.self, from: data)
-            
-            return object
+            if httpMethod == .delete {
+                return Dummy() as! TOut
+            } else {
+                let object = try decoder.decode(TOut.self, from: data)
+                
+                return object
+            }
         } catch {
             print(error)
             throw error
@@ -165,8 +174,9 @@ enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"
+    case delete = "DELETE"
 }
 
 //MARK: - Used to pass empty data in sendAsync() from getAsync()
-struct Dummy: Encodable {
+struct Dummy: Codable {
 }

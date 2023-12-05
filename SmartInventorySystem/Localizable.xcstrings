@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Add User" : {
+
+    },
     "Create Group" : {
 
     },
@@ -14,6 +17,9 @@
 
     },
     "Email" : {
+
+    },
+    "Email or phone" : {
 
     },
     "Group" : {

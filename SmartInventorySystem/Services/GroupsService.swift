@@ -38,4 +38,17 @@ class GroupsService: ServiceBase {
         
         return group
     }
+    
+    func addUserToGroup(_ groupId: String, _ userId: String) async throws {
+        let _: Group = try await HttpClient.shared.postAsync("\(baseUrl)/\(groupId)/users/\(userId)", Dummy())
+    }
+    
+    func removeUserFromGroup(_ groupId: String, _ userId: String) async throws {
+        let _: Group = try await HttpClient.shared.deleteAsync("\(baseUrl)/\(groupId)/users/\(userId)")
+    }
+    
+    func leaveGroup(_ groupId: String) async throws {
+        let _: Dummy = try await HttpClient.shared.deleteAsync("\(baseUrl)/\(groupId)/users")
+        await GlobalUser.shared.setGroupId(nil)
+    }
 }

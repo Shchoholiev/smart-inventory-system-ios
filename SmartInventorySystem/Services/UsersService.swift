@@ -32,4 +32,10 @@ class UsersSerice: ServiceBase {
         
         return true
     }
+    
+    func getUser(_ username: String) async throws -> User {
+        let user: User = try await HttpClient.shared.getAsync("\(baseUrl)/\(username)")
+        
+        return user
+    }
 }

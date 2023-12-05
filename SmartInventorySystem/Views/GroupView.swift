@@ -13,11 +13,17 @@ struct GroupView: View {
     @State private var groupDescription: String = ""
     @State private var users: [User] = []
     
+    @State private var newUsername: String = ""
+    
     @State private var errorMessage: String? = nil
     @State private var isEditMode: Bool = false
     @State private var isLoading = true
+//    @State private var isLoading = false
+    
+    @State private var addUserCount = 0
 
     private var groupsService = GroupsService()
+    private var usersService = UsersSerice()
 
     var body: some View {
         if isLoading {
@@ -52,6 +58,7 @@ struct GroupView: View {
                         } label: {
                             Label("Edit", systemImage: "square.and.pencil")
                         }
+                        .symbolRenderingMode(.palette)
                     }
                 }
                 .padding([.trailing, .leading], 25)
@@ -74,6 +81,67 @@ struct GroupView: View {
                 if let message = errorMessage {
                     Text(message)
                         .foregroundColor(.red)
+                        .padding([.trailing, .leading], 15)
+                }
+                
+                HStack {
+                    TextField("Email or phone", text: $newUsername)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                    Button(action: addUser) {
+                        Image(systemName: "person.fill.badge.plus")
+                            .symbolRenderingMode(.palette)
+                            .foregroundStyle(.white)
+                            .symbolEffect(.bounce, value: addUserCount)
+                            
+                        Text("Add User")
+                            .foregroundColor(.white)
+                    }
+                    .padding([.trailing, .leading], 15)
+                    .padding([.top, .bottom], 7)
+                    .background(.blue)
+                    .opacity(newUsername.isEmpty ? 0.5 : 1)
+                    .cornerRadius(40)
+                    .disabled(newUsername.isEmpty)
+                }
+                .padding([.leading, .trailing])
+                
+                ScrollView {
+                    VStack(spacing: 10) {
+                        ForEach(users, id: \.id) { user in
+                            HStack {
+                                HStack() {
+                                    Text(user.name)
+                                        .font(.headline)
+                                    Text(user.email ?? "")
+                                        .font(.subheadline)
+                                    Text(user.phone ?? "")
+                                        .font(.subheadline)
+                                }
+
+                                Spacer()
+
+                                if GlobalUser.shared.id != user.id {
+                                    Button(action: { deleteUser(user) }) {
+                                        Image(systemName: "trash.circle.fill")
+                                            .foregroundColor(.red)
+                                            .font(.system(size: 24))
+                                    }
+                                } else {
+                                    Button(action: { leaveGroup() }) {
+                                        Image(systemName: "arrow.right.circle.fill")
+                                            .foregroundColor(.yellow)
+                                            .font(.system(size: 24))
+                                    }
+                                }
+                            }
+                            .padding([.top, .bottom], 10)
+                            .padding([.leading, .trailing])
+                            .background(Color.white)
+                            .cornerRadius(10)
+                        }
+                    }
+                    .padding()
                 }
                 
                 Spacer()
@@ -90,6 +158,7 @@ struct GroupView: View {
     private func loadGroupData() {
         Task {
             do {
+//                await GlobalUser.shared.setGroupId(nil)
                 let group = try await groupsService.getGroup(groupId)
                 groupName = group.name
                 groupDescription = group.description ?? ""
@@ -112,6 +181,57 @@ struct GroupView: View {
                 _ = try await groupsService.updateGroup(groupId, group)
                 groupName = group.name
                 groupDescription = group.description ?? ""
+                
+                errorMessage = nil
+                isEditMode = false
+            } catch let httpError as HttpError {
+                errorMessage = httpError.message
+            }
+        }
+    }
+    
+    private func addUser() {
+        addUserCount += 1
+        Task {
+            do {
+                let user = try await usersService.getUser(newUsername)
+                _ = try await groupsService.addUserToGroup(groupId, user.id)
+                
+                let fetchedUsers = try await groupsService.getGroupUsers(groupId)
+                users = fetchedUsers
+                print(users)
+                
+                newUsername = ""
+                errorMessage = nil
+                isEditMode = false
+            } catch let httpError as HttpError {
+                errorMessage = httpError.message
+            }
+        }
+    }
+    
+    private func deleteUser(_ user: User) {
+        Task {
+            do {
+                _ = try await groupsService.removeUserFromGroup(groupId, user.id)
+                
+                let fetchedUsers = try await groupsService.getGroupUsers(groupId)
+                users = fetchedUsers
+                
+                errorMessage = nil
+                isEditMode = false
+            } catch let httpError as HttpError {
+                errorMessage = httpError.message
+            }
+        }
+    }
+
+    private func leaveGroup() {
+        Task {
+            do {
+                _ = try await groupsService.leaveGroup(groupId)
+                
+                
                 
                 errorMessage = nil
                 isEditMode = false

@@ -43,8 +43,12 @@ class GlobalUser: ObservableObject {
         }
     }
     
-    func setGroupId(_ value: String) async {
-        UserDefaults.standard.set(value, forKey: "groupId")
+    func setGroupId(_ value: String?) async {
+        if value == nil {
+            UserDefaults.standard.removeObject(forKey: "groupId")
+        } else {
+            UserDefaults.standard.set(value, forKey: "groupId")
+        }
         await MainActor.run {
             groupId = value
         }
