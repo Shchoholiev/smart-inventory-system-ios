@@ -16,6 +16,7 @@ class GroupsService: ServiceBase {
     func createGroup(_ group: Group) async throws -> Group {
         let createdGroup: Group = try await HttpClient.shared.postAsync("\(baseUrl)", group)
         await GlobalUser.shared.setGroupId(createdGroup.id)
+        await HttpClient.shared.refreshUserAuthentication()
         
         return createdGroup
     }

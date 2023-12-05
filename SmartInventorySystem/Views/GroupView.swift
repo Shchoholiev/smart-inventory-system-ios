@@ -26,13 +26,13 @@ struct GroupView: View {
     private var usersService = UsersSerice()
 
     var body: some View {
-        if isLoading {
-            ProgressView()
-            .onAppear {
-                loadGroupData()
-            }
-        } else {
             VStack(spacing: 10) {
+                if isLoading {
+                    ProgressView()
+                    .onAppear {
+                        loadGroupData()
+                    }
+                } else {
                 HStack {
                     Text("Your Group")
                         .font(.title)
@@ -146,8 +146,11 @@ struct GroupView: View {
                 
                 Spacer()
             }
-            .padding()
-            .background(Color(UIColor.systemGroupedBackground))
+        }
+        .padding()
+        .background(isLoading ? Color.white : Color(UIColor.systemGroupedBackground))
+        .onAppear {
+            loadGroupData()
         }
     }
 
@@ -158,7 +161,6 @@ struct GroupView: View {
     private func loadGroupData() {
         Task {
             do {
-//                await GlobalUser.shared.setGroupId(nil)
                 let group = try await groupsService.getGroup(groupId)
                 groupName = group.name
                 groupDescription = group.description ?? ""

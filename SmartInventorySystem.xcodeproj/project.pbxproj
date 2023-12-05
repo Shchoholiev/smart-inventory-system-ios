@@ -29,6 +29,7 @@
 		908A34432B1E816000FE47AD /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34422B1E816000FE47AD /* GroupView.swift */; };
 		908A34452B1E882500FE47AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34442B1E882500FE47AD /* User.swift */; };
 		908A34472B1E883100FE47AD /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34462B1E883100FE47AD /* Role.swift */; };
+		908A34492B1ED6F400FE47AD /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34482B1ED6F400FE47AD /* UserProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		908A34422B1E816000FE47AD /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		908A34442B1E882500FE47AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		908A34462B1E883100FE47AD /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		908A34482B1ED6F400FE47AD /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				908A34362B1D617500FE47AD /* LoginView.swift */,
 				908A34402B1D7C4400FE47AD /* GroupCreationView.swift */,
 				908A34422B1E816000FE47AD /* GroupView.swift */,
+				908A34482B1ED6F400FE47AD /* UserProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				908A34432B1E816000FE47AD /* GroupView.swift in Sources */,
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
 				908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */,
+				908A34492B1ED6F400FE47AD /* UserProfileView.swift in Sources */,
 				908A34472B1E883100FE47AD /* Role.swift in Sources */,
 				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,

@@ -40,10 +40,13 @@ class HttpClient: ObservableObject {
     }
     
     func logout() {
-        isAuthenticated = false
+        Task {
+            await setAuthenticated(false)
+        }
         jwtTokensService.clearTokensInKeychain()
         accessToken = nil
         UserDefaults.standard.removeObject(forKey: "groupId")
+        GlobalUser.shared.clear()
     }
     
     // TODO: move to global user
@@ -56,6 +59,16 @@ class HttpClient: ObservableObject {
     
     func checkAuthentication() async {
         await checkAccessTokenAsync()
+    }
+    
+    func refreshUserAuthentication() async {
+        let tokensModel = await getTokensAsync()
+        if let tokens = tokensModel {
+            jwtTokensService.storeTokensInKeychain(tokens: tokens)
+            GlobalUser.shared.setUserFromJwt(tokens.accessToken)
+            accessToken = tokens.accessToken
+            await setAuthenticated(true)
+        }
     }
     
     private func sendAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn?, _ httpMethod: HttpMethod) async throws -> TOut {

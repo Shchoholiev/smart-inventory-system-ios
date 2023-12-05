@@ -4,6 +4,9 @@
     "Add User" : {
 
     },
+    "Create Device" : {
+
+    },
     "Create Group" : {
 
     },
@@ -48,7 +51,16 @@
     "If you want to join a group provide your email or phone to the owner of the group." : {
 
     },
+    "Items" : {
+
+    },
     "Login" : {
+
+    },
+    "Logout" : {
+
+    },
+    "Manage users" : {
 
     },
     "Name" : {
@@ -60,13 +72,19 @@
     "Phone" : {
 
     },
+    "Profile" : {
+
+    },
     "Register" : {
 
     },
     "Save" : {
 
     },
-    "Second Tab" : {
+    "Shelves" : {
+
+    },
+    "User Profile" : {
 
     },
     "Your Group" : {

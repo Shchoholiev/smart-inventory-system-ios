@@ -53,4 +53,15 @@ class GlobalUser: ObservableObject {
             groupId = value
         }
     }
+    
+    func clear() {
+        self.id = nil
+        self.name = nil
+        self.email = nil
+        self.phone = nil
+        self.roles = []
+        Task {
+            await setGroupId(nil)
+        }
+    }
 }
