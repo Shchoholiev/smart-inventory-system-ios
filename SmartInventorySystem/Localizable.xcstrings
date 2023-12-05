@@ -7,13 +7,19 @@
     "Description" : {
 
     },
+    "Devices" : {
+
+    },
+    "Edit" : {
+
+    },
     "Email" : {
 
     },
-    "Group Name" : {
+    "Group" : {
 
     },
-    "groups" : {
+    "Group Name" : {
 
     },
     "Hello, world!" : {
@@ -49,6 +55,15 @@
 
     },
     "Register" : {
+
+    },
+    "Save" : {
+
+    },
+    "Second Tab" : {
+
+    },
+    "Your Group" : {
 
     }
   },

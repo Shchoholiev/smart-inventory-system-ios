@@ -19,6 +19,11 @@ class HttpClient: ObservableObject {
     
     @Published var isAuthenticated = false
     
+    func getAsync<TOut: Decodable>(_ path: String) async throws -> TOut {
+        await self.checkAccessTokenAsync()
+        return try await sendAsync(path, nil as Dummy?, .get)
+    }
+    
     func postAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn) async throws -> TOut {
         await self.checkAccessTokenAsync()
         return try await sendAsync(path, data, .post)
@@ -44,11 +49,12 @@ class HttpClient: ObservableObject {
         }
     }
     
-    private func sendAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn, _ httpMethod: HttpMethod) async throws -> TOut {
+    func checkAuthentication() async {
+        await checkAccessTokenAsync()
+    }
+    
+    private func sendAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn?, _ httpMethod: HttpMethod) async throws -> TOut {
         do {
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(data)
-            
             var request = URLRequest(url: baseUrl.appendingPathComponent(path))
             print(baseUrl.appendingPathComponent(path))
             request.httpMethod = httpMethod.rawValue
@@ -56,10 +62,16 @@ class HttpClient: ObservableObject {
             if let jwt = accessToken {
                 request.setValue("Bearer \(jwt)", forHTTPHeaderField: "Authorization")
             }
-            request.httpBody = jsonData
-            let jsonDataStr = String(data: jsonData, encoding: .utf8 )
-            print("sendAsync input")
-            print(jsonDataStr)
+            
+            if let inputData = data {
+                let jsonEncoder = JSONEncoder()
+                let jsonData = try jsonEncoder.encode(data)
+                request.httpBody = jsonData
+                
+                let jsonDataStr = String(data: jsonData, encoding: .utf8 )
+                print("sendAsync input")
+                print(jsonDataStr)
+            }
             
             let decoder = JSONDecoder()
             let dateFormatter = DateFormatter()
@@ -101,6 +113,7 @@ class HttpClient: ObservableObject {
         if let tokens = tokensModel {
             GlobalUser.shared.setUserFromJwt(tokens.accessToken)
             accessToken = tokens.accessToken
+            await setAuthenticated(true)
         } else {
             await setAuthenticated(false)
         }
@@ -152,4 +165,8 @@ enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"
+}
+
+//MARK: - Used to pass empty data in sendAsync() from getAsync()
+struct Dummy: Encodable {
 }

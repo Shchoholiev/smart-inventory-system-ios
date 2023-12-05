@@ -26,6 +26,9 @@
 		908A343B2B1D796B00FE47AD /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A343A2B1D796B00FE47AD /* GroupsService.swift */; };
 		908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A343E2B1D7B6D00FE47AD /* Group.swift */; };
 		908A34412B1D7C4400FE47AD /* GroupCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34402B1D7C4400FE47AD /* GroupCreationView.swift */; };
+		908A34432B1E816000FE47AD /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34422B1E816000FE47AD /* GroupView.swift */; };
+		908A34452B1E882500FE47AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34442B1E882500FE47AD /* User.swift */; };
+		908A34472B1E883100FE47AD /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34462B1E883100FE47AD /* Role.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		908A343A2B1D796B00FE47AD /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
 		908A343E2B1D7B6D00FE47AD /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		908A34402B1D7C4400FE47AD /* GroupCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreationView.swift; sourceTree = "<group>"; };
+		908A34422B1E816000FE47AD /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
+		908A34442B1E882500FE47AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		908A34462B1E883100FE47AD /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 				908A341C2B1CFD4200FE47AD /* RegisterView.swift */,
 				908A34362B1D617500FE47AD /* LoginView.swift */,
 				908A34402B1D7C4400FE47AD /* GroupCreationView.swift */,
+				908A34422B1E816000FE47AD /* GroupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,6 +124,8 @@
 			children = (
 				908A34192B1CFCAD00FE47AD /* Identity */,
 				908A343E2B1D7B6D00FE47AD /* Group.swift */,
+				908A34442B1E882500FE47AD /* User.swift */,
+				908A34462B1E883100FE47AD /* Role.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,10 +248,13 @@
 			files = (
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
 				908A34392B1D627700FE47AD /* LoginModel.swift in Sources */,
+				908A34432B1E816000FE47AD /* GroupView.swift in Sources */,
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
 				908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */,
+				908A34472B1E883100FE47AD /* Role.swift in Sources */,
 				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
+				908A34452B1E882500FE47AD /* User.swift in Sources */,
 				908A341D2B1CFD4200FE47AD /* RegisterView.swift in Sources */,
 				908A34412B1D7C4400FE47AD /* GroupCreationView.swift in Sources */,
 				908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */,
@@ -388,12 +400,13 @@
 				DEVELOPMENT_TEAM = 64FG98G3D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Inventory System";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -418,12 +431,13 @@
 				DEVELOPMENT_TEAM = 64FG98G3D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Inventory System";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

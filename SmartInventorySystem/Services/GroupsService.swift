@@ -19,4 +19,23 @@ class GroupsService: ServiceBase {
         
         return createdGroup
     }
+
+    func updateGroup(_ id: String, _ group: Group) async throws -> Group {
+        let updatedGroup: Group = try await HttpClient.shared.putAsync("\(baseUrl)/\(id)", group)
+        await GlobalUser.shared.setGroupId(updatedGroup.id)
+        
+        return updatedGroup
+    }
+    
+    func getGroup(_ groupId: String) async throws -> Group {
+        let group: Group = try await HttpClient.shared.getAsync("\(baseUrl)/\(groupId)")
+        
+        return group
+    }
+    
+    func getGroupUsers(_ groupId: String) async throws -> [User] {
+        let group: [User] = try await HttpClient.shared.getAsync("\(baseUrl)/\(groupId)/users")
+        
+        return group
+    }
 }

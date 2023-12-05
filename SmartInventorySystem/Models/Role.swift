@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct Role: Codable {
+    var id: String
+    var name: String
+}

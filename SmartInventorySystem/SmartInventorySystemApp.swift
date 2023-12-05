@@ -13,22 +13,51 @@ struct SmartInventorySystemApp: App {
     @StateObject private var globalUser = GlobalUser.shared
     
     @State var showLogin: Bool = false
+    @State private var isLoading = true
     
     let groupsService = GroupsService()
     
+    @State var groupClick = 0
+    
     var body: some Scene {
         WindowGroup {
-            if (httpClient.isAuthenticated) {
-                if globalUser.groupId != nil {
-                    Text("groups")
-                } else {
-                    GroupCreationView()
+            if isLoading {
+                ProgressView()
+                .onAppear {
+                    Task {
+                        await HttpClient.shared.checkAuthentication()
+                        isLoading = false
+                    }
                 }
             } else {
-                if showLogin {
-                    LoginView(showLogin: $showLogin)
+                if (httpClient.isAuthenticated) {
+                    if globalUser.groupId != nil {
+                        TabView {
+                            GroupView()
+                                .tabItem {
+                                    Image(systemName: "person.3.fill")
+                                        .symbolRenderingMode(.palette)
+                                        .foregroundStyle(Color.blue)
+                                    Text("Group")
+                                }
+                            
+                            Text("Second Tab")
+                                .tabItem {
+                                    Image(systemName: "cpu")
+                                        .symbolRenderingMode(.palette)
+                                        .foregroundStyle(Color.blue)
+                                    Text("Devices")
+                                }
+                        }
+                    } else {
+                        GroupCreationView()
+                    }
                 } else {
-                    RegisterView(showLogin: $showLogin)
+                    if showLogin {
+                        LoginView(showLogin: $showLogin)
+                    } else {
+                        RegisterView(showLogin: $showLogin)
+                    }
                 }
             }
         }
