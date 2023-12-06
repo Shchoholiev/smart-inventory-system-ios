@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ShelfDetailsView: View {
+    var shelf: Shelf
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("ShelfDetailsView")
     }
 }
 
 #Preview {
-    ShelfDetailsView()
+    ShelfDetailsView(shelf: Shelf(id: "", name: "", isLitUp: true, groupId: "", deviceId: ""))
 }

@@ -39,13 +39,19 @@ struct SmartInventorySystemApp: App {
                                     Text("Items")
                                 }
                             
-                            ShelvesView()
-                                .tabItem {
-                                    Image(systemName: "tray.2.fill")
-                                        .symbolRenderingMode(.palette)
-                                        .foregroundStyle(Color.blue)
-                                    Text("Shelves")
-                                }
+                            NavigationStack {
+                                ShelvesView()
+                                    .navigationDestination(for: Shelf.self) { shelf in
+                                        ShelfDetailsView(shelf: shelf)
+                                            .navigationTitle(shelf.name)
+                                    }
+                            }
+                            .tabItem {
+                                Image(systemName: "tray.2.fill")
+                                    .symbolRenderingMode(.palette)
+                                    .foregroundStyle(Color.blue)
+                                Text("Shelves")
+                            }
                             
                             if globalUser.roles.contains("Owner") {
                                 GroupView()

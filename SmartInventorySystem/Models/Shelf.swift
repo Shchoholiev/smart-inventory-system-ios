@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Shelf: Codable, Identifiable {
+struct Shelf: Codable, Identifiable, Hashable {
     var id: String
     var name: String
     var isLitUp: Bool

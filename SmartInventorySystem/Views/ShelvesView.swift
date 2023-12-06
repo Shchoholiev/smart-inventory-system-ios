@@ -13,7 +13,7 @@ struct ShelvesView: View {
     
     @State private var errorMessage: String? = nil
     @State private var isLoading = true
-    
+
     private var shelvesService = ShelvesService()
     
     var body: some View {
@@ -50,15 +50,13 @@ struct ShelvesView: View {
                                         Text("Light Status: \(shelf.isLitUp ? "ON" : "OFF")")
                                             .font(.subheadline)
                                             .foregroundStyle(.gray)
-                                        
                                     }
                                     
                                     Spacer()
                                     
-                                    Button {
-                                        
-                                    } label: {
-                                        Image(systemName: "info.circle.fill")                     .foregroundStyle(.blue)
+                                    NavigationLink(value: shelf) {
+                                        Image(systemName: "info.circle.fill")
+                                            .foregroundStyle(.blue)
                                             .font(.system(size: 24))
                                     }
                                 }

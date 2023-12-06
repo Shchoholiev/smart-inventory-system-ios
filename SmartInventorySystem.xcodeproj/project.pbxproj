@@ -37,6 +37,7 @@
 		908A34532B20069600FE47AD /* ShelvesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34522B20069600FE47AD /* ShelvesView.swift */; };
 		908A34552B20081100FE47AD /* Shelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34542B20081100FE47AD /* Shelf.swift */; };
 		908A34572B2008DF00FE47AD /* ShelvesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34562B2008DF00FE47AD /* ShelvesService.swift */; };
+		908A34592B2017DC00FE47AD /* ShelfDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		908A34522B20069600FE47AD /* ShelvesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelvesView.swift; sourceTree = "<group>"; };
 		908A34542B20081100FE47AD /* Shelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelf.swift; sourceTree = "<group>"; };
 		908A34562B2008DF00FE47AD /* ShelvesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelvesService.swift; sourceTree = "<group>"; };
+		908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,8 @@
 				908A34182B1CFCA800FE47AD /* Models */,
 				908A34172B1CFC2300FE47AD /* Views */,
 				908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */,
-				908A340B2B1CEAC800FE47AD /* Assets.xcassets */,
 				908A340D2B1CEAC800FE47AD /* Preview Content */,
+				908A340B2B1CEAC800FE47AD /* Assets.xcassets */,
 				908A34152B1CEB8D00FE47AD /* Localizable.xcstrings */,
 			);
 			path = SmartInventorySystem;
@@ -134,6 +136,7 @@
 				908A34482B1ED6F400FE47AD /* UserProfileView.swift */,
 				908A344A2B1FE7C100FE47AD /* DevicesView.swift */,
 				908A34522B20069600FE47AD /* ShelvesView.swift */,
+				908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
 				908A34452B1E882500FE47AD /* User.swift in Sources */,
+				908A34592B2017DC00FE47AD /* ShelfDetailsView.swift in Sources */,
 				908A341D2B1CFD4200FE47AD /* RegisterView.swift in Sources */,
 				908A344D2B1FE94800FE47AD /* Device.swift in Sources */,
 				908A34412B1D7C4400FE47AD /* GroupCreationView.swift in Sources */,
