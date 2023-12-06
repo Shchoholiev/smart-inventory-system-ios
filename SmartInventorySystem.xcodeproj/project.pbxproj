@@ -34,6 +34,9 @@
 		908A344D2B1FE94800FE47AD /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A344C2B1FE94800FE47AD /* Device.swift */; };
 		908A344F2B1FEB7A00FE47AD /* DevicesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A344E2B1FEB7A00FE47AD /* DevicesService.swift */; };
 		908A34512B1FFEE800FE47AD /* PagedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34502B1FFEE800FE47AD /* PagedList.swift */; };
+		908A34532B20069600FE47AD /* ShelvesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34522B20069600FE47AD /* ShelvesView.swift */; };
+		908A34552B20081100FE47AD /* Shelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34542B20081100FE47AD /* Shelf.swift */; };
+		908A34572B2008DF00FE47AD /* ShelvesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34562B2008DF00FE47AD /* ShelvesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		908A344C2B1FE94800FE47AD /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		908A344E2B1FEB7A00FE47AD /* DevicesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesService.swift; sourceTree = "<group>"; };
 		908A34502B1FFEE800FE47AD /* PagedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedList.swift; sourceTree = "<group>"; };
+		908A34522B20069600FE47AD /* ShelvesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelvesView.swift; sourceTree = "<group>"; };
+		908A34542B20081100FE47AD /* Shelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelf.swift; sourceTree = "<group>"; };
+		908A34562B2008DF00FE47AD /* ShelvesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelvesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 				908A34422B1E816000FE47AD /* GroupView.swift */,
 				908A34482B1ED6F400FE47AD /* UserProfileView.swift */,
 				908A344A2B1FE7C100FE47AD /* DevicesView.swift */,
+				908A34522B20069600FE47AD /* ShelvesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				908A34462B1E883100FE47AD /* Role.swift */,
 				908A344C2B1FE94800FE47AD /* Device.swift */,
 				908A34502B1FFEE800FE47AD /* PagedList.swift */,
+				908A34542B20081100FE47AD /* Shelf.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +187,7 @@
 				908A34322B1D2D1300FE47AD /* ServiceBase.swift */,
 				908A343A2B1D796B00FE47AD /* GroupsService.swift */,
 				908A344E2B1FEB7A00FE47AD /* DevicesService.swift */,
+				908A34562B2008DF00FE47AD /* ShelvesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 			files = (
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
 				908A34392B1D627700FE47AD /* LoginModel.swift in Sources */,
+				908A34572B2008DF00FE47AD /* ShelvesService.swift in Sources */,
 				908A34432B1E816000FE47AD /* GroupView.swift in Sources */,
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
 				908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */,
@@ -278,9 +288,11 @@
 				908A34202B1D118E00FE47AD /* HttpClient.swift in Sources */,
 				908A344F2B1FEB7A00FE47AD /* DevicesService.swift in Sources */,
 				908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */,
+				908A34532B20069600FE47AD /* ShelvesView.swift in Sources */,
 				908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */,
 				908A34512B1FFEE800FE47AD /* PagedList.swift in Sources */,
 				908A34372B1D617500FE47AD /* LoginView.swift in Sources */,
+				908A34552B20081100FE47AD /* Shelf.swift in Sources */,
 				908A343B2B1D796B00FE47AD /* GroupsService.swift in Sources */,
 				908A34312B1D2C9F00FE47AD /* UsersService.swift in Sources */,
 				908A34332B1D2D1300FE47AD /* ServiceBase.swift in Sources */,

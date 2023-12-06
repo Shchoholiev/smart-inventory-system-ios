@@ -39,7 +39,7 @@ struct SmartInventorySystemApp: App {
                                     Text("Items")
                                 }
                             
-                            Text("Shelves")
+                            ShelvesView()
                                 .tabItem {
                                     Image(systemName: "tray.2.fill")
                                         .symbolRenderingMode(.palette)

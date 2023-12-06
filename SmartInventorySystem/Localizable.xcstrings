@@ -60,6 +60,9 @@
     "Items" : {
 
     },
+    "Light Status: %@" : {
+
+    },
     "Login" : {
 
     },
@@ -73,6 +76,9 @@
 
     },
     "No devices" : {
+
+    },
+    "No shelves" : {
 
     },
     "Password" : {
@@ -100,6 +106,9 @@
 
     },
     "Your Group" : {
+
+    },
+    "Your Shelves" : {
 
     }
   },
