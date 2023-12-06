@@ -39,6 +39,11 @@ class HttpClient: ObservableObject {
         return try await sendAsync(path, data, .put)
     }
     
+    func patchAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn) async throws -> TOut {
+        await self.checkAccessTokenAsync()
+        return try await sendAsync(path, data, .patch)
+    }
+    
     func logout() {
         Task {
             await setAuthenticated(false)
@@ -73,8 +78,10 @@ class HttpClient: ObservableObject {
     
     private func sendAsync<TIn: Encodable, TOut: Decodable>(_ path: String, _ data: TIn?, _ httpMethod: HttpMethod) async throws -> TOut {
         do {
-            var request = URLRequest(url: baseUrl.appendingPathComponent(path))
-            print(baseUrl.appendingPathComponent(path))
+            let url = URL(string: baseUrl.absoluteString + path)!
+            print(url)
+            
+            var request = URLRequest(url: url)
             request.httpMethod = httpMethod.rawValue
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             if let jwt = accessToken {
@@ -93,21 +100,22 @@ class HttpClient: ObservableObject {
             
             let (data, response) = try await URLSession.shared.data(for: request)
             
+            let str = String(data: data, encoding: .utf8 )
+            print("sendAsync result")
+            print(str)
+            
             let decoder = JSONDecoder()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
             decoder.dateDecodingStrategy = .formatted(dateFormatter)
             
             let httpResponse = response as! HTTPURLResponse
+            print(httpResponse.statusCode)
             if !(200...299).contains(httpResponse.statusCode) {
                 
                 let httpError = try decoder.decode(HttpError.self, from: data)
                 throw httpError
             }
-            
-            let str = String(data: data, encoding: .utf8 )
-            print("sendAsync result")
-            print(str)
             
             if httpMethod == .delete {
                 return Dummy() as! TOut
@@ -187,6 +195,7 @@ enum HttpMethod: String {
     case get = "GET"
     case post = "POST"
     case put = "PUT"
+    case patch = "PATCH"
     case delete = "DELETE"
 }
 

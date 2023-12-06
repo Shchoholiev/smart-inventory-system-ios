@@ -18,7 +18,6 @@ struct GroupView: View {
     @State private var errorMessage: String? = nil
     @State private var isEditMode: Bool = false
     @State private var isLoading = true
-//    @State private var isLoading = false
     
     @State private var addUserCount = 0
 
@@ -86,7 +85,13 @@ struct GroupView: View {
                 
                 HStack {
                     TextField("Email or phone", text: $newUsername)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding([.leading, .trailing], 10)
+                        .padding([.top, .bottom], 5)
+                        .cornerRadius(7)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 7)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
 
                     Button(action: addUser) {
                         Image(systemName: "person.fill.badge.plus")
@@ -232,8 +237,6 @@ struct GroupView: View {
         Task {
             do {
                 _ = try await groupsService.leaveGroup(groupId)
-                
-                
                 
                 errorMessage = nil
                 isEditMode = false

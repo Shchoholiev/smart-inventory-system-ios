@@ -56,7 +56,7 @@ struct SmartInventorySystemApp: App {
                                         Text("Group")
                                     }
                                 
-                                Text("Devices")
+                                DevicesView()
                                     .tabItem {
                                         Image(systemName: "cpu")
                                             .symbolRenderingMode(.palette)
