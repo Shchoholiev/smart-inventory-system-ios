@@ -1,7 +1,13 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
     "Activate" : {
+
+    },
+    "Add Item" : {
 
     },
     "Add User" : {
@@ -57,7 +63,13 @@
     "If you want to join a group provide your email or phone to the owner of the group." : {
 
     },
+    "Item Name" : {
+
+    },
     "Items" : {
+
+    },
+    "Items Details" : {
 
     },
     "Light Status: %@" : {
@@ -78,6 +90,9 @@
     "No devices" : {
 
     },
+    "No items" : {
+
+    },
     "No shelves" : {
 
     },
@@ -94,9 +109,6 @@
 
     },
     "Save" : {
-
-    },
-    "ShelfDetailsView" : {
 
     },
     "Shelves" : {

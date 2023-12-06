@@ -142,7 +142,7 @@ struct GroupView: View {
                             }
                             .padding([.top, .bottom], 10)
                             .padding([.leading, .trailing])
-                            .background(Color.white)
+                            .background(Color(UIColor.secondarySystemGroupedBackground))
                             .cornerRadius(10)
                         }
                     }
@@ -153,10 +153,7 @@ struct GroupView: View {
             }
         }
         .padding()
-        .background(isLoading ? Color.white : Color(UIColor.systemGroupedBackground))
-        .onAppear {
-            loadGroupData()
-        }
+        .background(isLoading ? Color(.systemBackground) : Color(UIColor.systemGroupedBackground))
     }
 
     var isFormValid: Bool {

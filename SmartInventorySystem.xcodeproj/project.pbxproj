@@ -38,6 +38,8 @@
 		908A34552B20081100FE47AD /* Shelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34542B20081100FE47AD /* Shelf.swift */; };
 		908A34572B2008DF00FE47AD /* ShelvesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34562B2008DF00FE47AD /* ShelvesService.swift */; };
 		908A34592B2017DC00FE47AD /* ShelfDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */; };
+		908A345B2B202B2F00FE47AD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A345A2B202B2F00FE47AD /* Item.swift */; };
+		908A345D2B2034F800FE47AD /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A345C2B2034F800FE47AD /* ItemDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		908A34542B20081100FE47AD /* Shelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelf.swift; sourceTree = "<group>"; };
 		908A34562B2008DF00FE47AD /* ShelvesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelvesService.swift; sourceTree = "<group>"; };
 		908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfDetailsView.swift; sourceTree = "<group>"; };
+		908A345A2B202B2F00FE47AD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		908A345C2B2034F800FE47AD /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 				908A344A2B1FE7C100FE47AD /* DevicesView.swift */,
 				908A34522B20069600FE47AD /* ShelvesView.swift */,
 				908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */,
+				908A345C2B2034F800FE47AD /* ItemDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				908A344C2B1FE94800FE47AD /* Device.swift */,
 				908A34502B1FFEE800FE47AD /* PagedList.swift */,
 				908A34542B20081100FE47AD /* Shelf.swift */,
+				908A345A2B202B2F00FE47AD /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,10 +285,12 @@
 				908A34432B1E816000FE47AD /* GroupView.swift in Sources */,
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
 				908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */,
+				908A345B2B202B2F00FE47AD /* Item.swift in Sources */,
 				908A34492B1ED6F400FE47AD /* UserProfileView.swift in Sources */,
 				908A344B2B1FE7C100FE47AD /* DevicesView.swift in Sources */,
 				908A34472B1E883100FE47AD /* Role.swift in Sources */,
 				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
+				908A345D2B2034F800FE47AD /* ItemDetailsView.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
 				908A34452B1E882500FE47AD /* User.swift in Sources */,
 				908A34592B2017DC00FE47AD /* ShelfDetailsView.swift in Sources */,

@@ -18,4 +18,16 @@ class ShelvesService: ServiceBase {
         
         return shelves
     }
+    
+    func getShelfItems(_ shelfId: String) async throws -> [Item] {
+        let items: [Item] = try await HttpClient.shared.getAsync("\(baseUrl)/\(shelfId)/items")
+        
+        return items
+    }
+    
+    func addItem(_ shelfId: String, _ item: Item) async throws -> Item {
+        let createdItem: Item = try await HttpClient.shared.postAsync("\(baseUrl)/\(shelfId)/items", item)
+        
+        return createdItem
+    }
 }

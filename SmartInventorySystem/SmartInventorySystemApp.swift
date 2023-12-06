@@ -45,6 +45,10 @@ struct SmartInventorySystemApp: App {
                                         ShelfDetailsView(shelf: shelf)
                                             .navigationTitle(shelf.name)
                                     }
+                                    .navigationDestination(for: Item.self) { item in
+                                        ItemDetailsView(item: item)
+                                            .navigationTitle(item.name)
+                                    }
                             }
                             .tabItem {
                                 Image(systemName: "tray.2.fill")

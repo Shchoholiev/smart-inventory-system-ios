@@ -80,7 +80,7 @@ struct DevicesView: View {
                                 }
                                 .padding([.top, .bottom], 13)
                                 .padding([.leading, .trailing], 17)
-                                .background(Color.white)
+                                .background(Color(UIColor.secondarySystemGroupedBackground))
                                 .cornerRadius(10)
                             }
                         }
