@@ -115,8 +115,6 @@ struct ShelfDetailsView: View {
             
             Spacer()
         }
-        .padding(.top, 0)
-        .padding([.leading, .top, .bottom])
         .background(Color(UIColor.systemGroupedBackground))
     }
     

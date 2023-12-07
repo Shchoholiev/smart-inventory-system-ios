@@ -14,3 +14,8 @@ struct Item: Codable, Identifiable, Hashable {
     var isTaken: Bool = false
     var shelfId: String = ""
 }
+
+struct ItemStatus: Encodable {
+    let isTaken: Bool
+    let comment: String
+}

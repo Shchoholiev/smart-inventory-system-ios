@@ -31,13 +31,19 @@ struct SmartInventorySystemApp: App {
                 if (httpClient.isAuthenticated) {
                     if globalUser.groupId != nil {
                         TabView {
-                            Text("Items")
-                                .tabItem {
-                                    Image(systemName: "rectangle.stack.fill")
-                                        .symbolRenderingMode(.palette)
-                                        .foregroundStyle(Color.blue)
-                                    Text("Items")
-                                }
+                            NavigationStack {
+                                ItemsView()
+                                    .navigationDestination(for: Item.self) { item in
+                                        ItemDetailsView(item: item)
+                                            .navigationTitle(item.name)
+                                    }
+                            }
+                            .tabItem {
+                                Image(systemName: "rectangle.stack.fill")
+                                    .symbolRenderingMode(.palette)
+                                    .foregroundStyle(Color.blue)
+                                Text("Items")
+                            }
                             
                             NavigationStack {
                                 ShelvesView()

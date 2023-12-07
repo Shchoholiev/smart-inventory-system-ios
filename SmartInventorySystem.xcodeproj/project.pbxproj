@@ -40,6 +40,8 @@
 		908A34592B2017DC00FE47AD /* ShelfDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */; };
 		908A345B2B202B2F00FE47AD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A345A2B202B2F00FE47AD /* Item.swift */; };
 		908A345D2B2034F800FE47AD /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A345C2B2034F800FE47AD /* ItemDetailsView.swift */; };
+		908A345F2B2172A100FE47AD /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A345E2B2172A100FE47AD /* ItemsView.swift */; };
+		908A34612B21759F00FE47AD /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34602B21759F00FE47AD /* ItemsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfDetailsView.swift; sourceTree = "<group>"; };
 		908A345A2B202B2F00FE47AD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		908A345C2B2034F800FE47AD /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
+		908A345E2B2172A100FE47AD /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		908A34602B21759F00FE47AD /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 				908A34522B20069600FE47AD /* ShelvesView.swift */,
 				908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */,
 				908A345C2B2034F800FE47AD /* ItemDetailsView.swift */,
+				908A345E2B2172A100FE47AD /* ItemsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				908A343A2B1D796B00FE47AD /* GroupsService.swift */,
 				908A344E2B1FEB7A00FE47AD /* DevicesService.swift */,
 				908A34562B2008DF00FE47AD /* ShelvesService.swift */,
+				908A34602B21759F00FE47AD /* ItemsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,
 				908A343F2B1D7B6D00FE47AD /* Group.swift in Sources */,
 				908A345B2B202B2F00FE47AD /* Item.swift in Sources */,
+				908A345F2B2172A100FE47AD /* ItemsView.swift in Sources */,
 				908A34492B1ED6F400FE47AD /* UserProfileView.swift in Sources */,
 				908A344B2B1FE7C100FE47AD /* DevicesView.swift in Sources */,
 				908A34472B1E883100FE47AD /* Role.swift in Sources */,
@@ -306,6 +313,7 @@
 				908A34372B1D617500FE47AD /* LoginView.swift in Sources */,
 				908A34552B20081100FE47AD /* Shelf.swift in Sources */,
 				908A343B2B1D796B00FE47AD /* GroupsService.swift in Sources */,
+				908A34612B21759F00FE47AD /* ItemsService.swift in Sources */,
 				908A34312B1D2C9F00FE47AD /* UsersService.swift in Sources */,
 				908A34332B1D2D1300FE47AD /* ServiceBase.swift in Sources */,
 			);

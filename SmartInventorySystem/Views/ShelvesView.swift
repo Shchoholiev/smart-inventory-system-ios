@@ -78,7 +78,7 @@ struct ShelvesView: View {
             
             Spacer()
         }
-        .padding()
+        .padding(.top)
         .background(Color(UIColor.systemGroupedBackground))
     }
     

@@ -152,7 +152,7 @@ struct GroupView: View {
                 Spacer()
             }
         }
-        .padding()
+        .padding(.top)
         .background(isLoading ? Color(.systemBackground) : Color(UIColor.systemGroupedBackground))
     }
 
