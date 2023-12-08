@@ -17,6 +17,8 @@ class HttpClient: ObservableObject {
     
     private var accessToken: String?
     
+    private var usersService = UsersSerice()
+    
     @Published var isAuthenticated = false
     
     func getAsync<TOut: Decodable>(_ path: String) async throws -> TOut {
@@ -64,6 +66,12 @@ class HttpClient: ObservableObject {
     
     func checkAuthentication() async {
         await checkAccessTokenAsync()
+        do {
+            let user: User = try await getAsync("/users/\(GlobalUser.shared.email ?? GlobalUser.shared.phone ?? "")")            
+            await GlobalUser.shared.setGroupId(user.groupId)
+        } catch {
+//            print(error)
+        }
     }
     
     func refreshUserAuthentication() async {

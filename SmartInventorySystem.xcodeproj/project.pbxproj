@@ -42,6 +42,7 @@
 		908A345D2B2034F800FE47AD /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A345C2B2034F800FE47AD /* ItemDetailsView.swift */; };
 		908A345F2B2172A100FE47AD /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A345E2B2172A100FE47AD /* ItemsView.swift */; };
 		908A34612B21759F00FE47AD /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34602B21759F00FE47AD /* ItemsService.swift */; };
+		908A34632B217C8B00FE47AD /* ItemHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34622B217C8B00FE47AD /* ItemHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		908A345C2B2034F800FE47AD /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 		908A345E2B2172A100FE47AD /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
 		908A34602B21759F00FE47AD /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
+		908A34622B217C8B00FE47AD /* ItemHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				908A34502B1FFEE800FE47AD /* PagedList.swift */,
 				908A34542B20081100FE47AD /* Shelf.swift */,
 				908A345A2B202B2F00FE47AD /* Item.swift */,
+				908A34622B217C8B00FE47AD /* ItemHistory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				908A34472B1E883100FE47AD /* Role.swift in Sources */,
 				908A34352B1D39E900FE47AD /* HttpError.swift in Sources */,
 				908A345D2B2034F800FE47AD /* ItemDetailsView.swift in Sources */,
+				908A34632B217C8B00FE47AD /* ItemHistory.swift in Sources */,
 				908A34222B1D131F00FE47AD /* TokensModel.swift in Sources */,
 				908A34452B1E882500FE47AD /* User.swift in Sources */,
 				908A34592B2017DC00FE47AD /* ShelfDetailsView.swift in Sources */,
@@ -374,11 +378,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Inventory System";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Smart Inventory System";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -431,10 +437,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Inventory System";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Smart Inventory System";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -453,6 +461,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Smart Inventory System";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -484,6 +493,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Smart Inventory System";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

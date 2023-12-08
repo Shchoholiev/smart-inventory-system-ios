@@ -26,9 +26,7 @@ class UsersSerice: ServiceBase {
     func login(_ loginModel: LoginModel) async throws -> Bool {
         let tokens: TokensModel = try await HttpClient.shared.postAsync("\(baseUrl)/login", loginModel)
         jwtService.storeTokensInKeychain(tokens: tokens)
-        await HttpClient.shared.setAuthenticated(true)
-        
-        // TODO: Pull current group id
+        await HttpClient.shared.checkAuthentication()
         
         return true
     }

@@ -35,7 +35,6 @@ struct SmartInventorySystemApp: App {
                                 ItemsView()
                                     .navigationDestination(for: Item.self) { item in
                                         ItemDetailsView(item: item)
-                                            .navigationTitle(item.name)
                                     }
                             }
                             .tabItem {

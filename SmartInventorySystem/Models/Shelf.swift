@@ -14,3 +14,8 @@ struct Shelf: Codable, Identifiable, Hashable {
     var groupId: String
     var deviceId: String
 }
+
+struct ShelfStatus: Encodable {
+    let isLitUp: Bool
+    let itemId: String
+}

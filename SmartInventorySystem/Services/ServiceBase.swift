@@ -15,4 +15,14 @@ class ServiceBase {
     init(url: String) {
         baseUrl = url
     }
+    
+    func convertUTCDateToLocalDateString(utcDate: Date, dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .medium) -> String {
+        let localDateFormatter = DateFormatter()
+        localDateFormatter.dateStyle = dateStyle
+        localDateFormatter.timeStyle = timeStyle
+        localDateFormatter.locale = Locale.current
+        localDateFormatter.timeZone = TimeZone.current
+
+        return localDateFormatter.string(from: utcDate)
+    }
 }

@@ -19,6 +19,20 @@ class ShelvesService: ServiceBase {
         return shelves
     }
     
+    func controlLight(shelfd: String, itemId: String, isOn: Bool) async throws -> Shelf {
+        let url = "\(baseUrl)/\(shelfd)/status"
+        let body = ShelfStatus(isLitUp: isOn, itemId: itemId)
+        let updatedShelf: Shelf = try await HttpClient.shared.patchAsync(url, body)
+        
+        return updatedShelf
+    }
+    
+    func getShelf(_ shelfId: String) async throws -> Shelf {
+        let shelf: Shelf = try await HttpClient.shared.getAsync("\(baseUrl)/\(shelfId)")
+        
+        return shelf
+    }
+    
     func getShelfItems(_ shelfId: String) async throws -> [Item] {
         let items: [Item] = try await HttpClient.shared.getAsync("\(baseUrl)/\(shelfId)/items")
         

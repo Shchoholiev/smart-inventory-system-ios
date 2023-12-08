@@ -13,10 +13,19 @@
     "Add User" : {
 
     },
+    "Are you sure you want to delete this item?" : {
+
+    },
+    "Confirm Deletion" : {
+
+    },
     "Create Device" : {
 
     },
     "Create Group" : {
+
+    },
+    "Delete" : {
 
     },
     "Description" : {
@@ -63,13 +72,13 @@
     "If you want to join a group provide your email or phone to the owner of the group." : {
 
     },
+    "Item deleted" : {
+
+    },
     "Item Name" : {
 
     },
     "Items" : {
-
-    },
-    "Items Details" : {
 
     },
     "Light Status: %@" : {
@@ -96,6 +105,9 @@
     "No shelves" : {
 
     },
+    "Optional comment" : {
+
+    },
     "Password" : {
 
     },
@@ -103,6 +115,9 @@
 
     },
     "Profile" : {
+
+    },
+    "Put Back" : {
 
     },
     "Register" : {
@@ -118,6 +133,15 @@
 
     },
     "Shelves" : {
+
+    },
+    "Take Item" : {
+
+    },
+    "Turn Off Light" : {
+
+    },
+    "Turn On Light" : {
 
     },
     "User Profile" : {

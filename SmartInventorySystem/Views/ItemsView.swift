@@ -19,58 +19,85 @@ struct ItemsView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 10) {
-                    ForEach($items, id: \.id) { $item in
-                        HStack(alignment: .top) {
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                    .font(.headline)
-                                
-                                if item.description != nil {
-                                    Text(item.description ?? "")
-                                        .font(.subheadline)
-                                        .foregroundStyle(.gray)
+            if isLoading {
+                // Used to make full screen gray when loading
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .background(Color(UIColor.systemGroupedBackground))
+            } else {
+                ScrollView {
+                    VStack(spacing: 10) {
+                        if items.count > 0 {
+                            ForEach($items, id: \.id) { $item in
+                                HStack(alignment: .top) {
+                                    VStack(alignment: .leading) {
+                                        Text(item.name)
+                                            .font(.headline)
+                                        
+                                        if item.description != nil {
+                                            Text(item.description ?? "")
+                                                .font(.subheadline)
+                                                .foregroundStyle(.gray)
+                                        }
+                                        
+                                        Text("\(item.isTaken ? "Taken" : "Available")")
+                                            .padding([.top, .bottom], 3)
+                                            .padding([.leading, .trailing], 6)
+                                            .font(.system(size: 14))
+                                            .bold()
+                                            .foregroundStyle(.white)
+                                            .background(item.isTaken ? Color.red : Color.green)
+                                            .cornerRadius(5)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    NavigationLink(value: item) {
+                                        Image(systemName: "info.circle.fill")
+                                            .foregroundStyle(.blue)
+                                            .font(.system(size: 24))
+                                    }
                                 }
-                                
-                                Text("\(item.isTaken ? "Taken" : "Available")")
-                                    .padding([.top, .bottom], 3)
-                                    .padding([.leading, .trailing], 6)
-                                    .font(.system(size: 14))
-                                    .bold()
-                                    .foregroundStyle(.white)
-                                    .background(item.isTaken ? Color.red : Color.green)
-                                    .cornerRadius(5)
+                                .padding([.top, .bottom], 13)
+                                .padding([.leading, .trailing], 17)
+                                .background(Color(UIColor.secondarySystemGroupedBackground))
+                                .cornerRadius(10)
                             }
                             
-                            Spacer()
-                            
-                            NavigationLink(value: item) {
-                                Image(systemName: "info.circle.fill")
-                                    .foregroundStyle(.blue)
-                                    .font(.system(size: 24))
+                        } else {
+                            VStack {
+                                HStack {
+                                    Spacer()
+                                    Text("No items")
+                                        .foregroundStyle(.gray)
+                                    Spacer()
+                                }
                             }
                         }
-                        .padding([.top, .bottom], 13)
-                        .padding([.leading, .trailing], 17)
-                        .background(Color(UIColor.secondarySystemGroupedBackground))
-                        .cornerRadius(10)
                     }
+                    .padding([.leading, .trailing, .bottom])
+                    .padding([.top], 5)
+                    .background(Color(UIColor.systemGroupedBackground))
                 }
-                .padding([.leading, .trailing, .bottom])
-                .padding([.top], 5)
                 .background(Color(UIColor.systemGroupedBackground))
-            }
-            .background(Color(UIColor.systemGroupedBackground))
-            .navigationBarTitle("Search Items")
-            .searchable(text: $searchText, prompt: "Search for items")
-            .onChange(of: searchText) { oldValue, newValue in
-                loadData()
+                .navigationBarTitle("Search Items")
+                .searchable(text: $searchText, prompt: "Search for items")
+                .onChange(of: searchText) { oldValue, newValue in
+                    loadData()
+                }
             }
         }
         .onAppear {
             loadData()
         }
+        
     }
     
     private func loadData() {
