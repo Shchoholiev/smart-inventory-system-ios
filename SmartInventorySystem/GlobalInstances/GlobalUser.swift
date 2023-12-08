@@ -29,11 +29,13 @@ class GlobalUser: ObservableObject {
             self.phone = jwt.claim(name: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/mobilephone").string
             
             if let roles = jwt.claim(name: "http://schemas.microsoft.com/ws/2008/06/identity/claims/role").array {
-                self.roles = roles
+                if self.roles.count != roles.count {
+                    self.roles = roles
+                }
             }
             
             let groupId = UserDefaults.standard.string(forKey: "groupId")
-            if let id = groupId {
+            if let id = groupId, id != self.groupId {
                 Task {
                     await setGroupId(id)
                 }

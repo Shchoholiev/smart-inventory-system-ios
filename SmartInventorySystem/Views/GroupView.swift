@@ -116,7 +116,7 @@ struct GroupView: View {
                         ForEach(users, id: \.id) { user in
                             HStack {
                                 HStack() {
-                                    Text(user.name)
+                                    Text(user.name ?? "")
                                         .font(.headline)
                                     Text(user.email ?? "")
                                         .font(.subheadline)

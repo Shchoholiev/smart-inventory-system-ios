@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9009D1102B23CFE400E82338 /* DeviceCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */; };
 		908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */; };
 		908A340C2B1CEAC800FE47AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340B2B1CEAC800FE47AD /* Assets.xcassets */; };
 		908A340F2B1CEAC800FE47AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCreationView.swift; sourceTree = "<group>"; };
 		908A34042B1CEAC600FE47AD /* Smart Inventory System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Inventory System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartInventorySystemApp.swift; sourceTree = "<group>"; };
 		908A340B2B1CEAC800FE47AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				908A34582B2017DC00FE47AD /* ShelfDetailsView.swift */,
 				908A345C2B2034F800FE47AD /* ItemDetailsView.swift */,
 				908A345E2B2172A100FE47AD /* ItemsView.swift */,
+				9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
 				908A34392B1D627700FE47AD /* LoginModel.swift in Sources */,
+				9009D1102B23CFE400E82338 /* DeviceCreationView.swift in Sources */,
 				908A34572B2008DF00FE47AD /* ShelvesService.swift in Sources */,
 				908A34432B1E816000FE47AD /* GroupView.swift in Sources */,
 				908A34252B1D138A00FE47AD /* JwtTokensService.swift in Sources */,

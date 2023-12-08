@@ -25,4 +25,10 @@ class DevicesService: ServiceBase {
         
         return devices
     }
+    
+    func createDevice(_ device: Device) async throws -> DeviceCreateDto {
+        let createdDevice: DeviceCreateDto = try await HttpClient.shared.postAsync("\(baseUrl)", device)
+        
+        return createdDevice
+    }
 }

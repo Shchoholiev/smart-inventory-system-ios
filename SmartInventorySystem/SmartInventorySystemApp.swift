@@ -20,11 +20,20 @@ struct SmartInventorySystemApp: App {
     var body: some Scene {
         WindowGroup {
             if isLoading {
-                ProgressView()
-                .onAppear {
-                    Task {
-                        await HttpClient.shared.checkAuthentication()
-                        isLoading = false
+                VStack {
+                    Image("AppIconImage")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(20)
+                        .padding()
+                    
+                    ProgressView()
+                    .onAppear {
+                        Task {
+                            await HttpClient.shared.checkAuthentication()
+                            isLoading = false
+                        }
                     }
                 }
             } else {
@@ -97,7 +106,7 @@ struct SmartInventorySystemApp: App {
                                         Text("Manage users")
                                     }
                                 
-                                Text("Create Device")
+                                DeviceCreationView()
                                     .tabItem {
                                         Image(systemName: "plus.circle.fill")
                                             .symbolRenderingMode(.palette)

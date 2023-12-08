@@ -4,6 +4,9 @@
     "%@" : {
 
     },
+    "Access Key: " : {
+
+    },
     "Activate" : {
 
     },
@@ -34,6 +37,12 @@
     "Device ID" : {
 
     },
+    "Device Name" : {
+
+    },
+    "Device Type" : {
+
+    },
     "Devices" : {
 
     },
@@ -46,10 +55,16 @@
     "Email or phone" : {
 
     },
+    "Enter details to create a new device" : {
+
+    },
     "Group" : {
 
     },
     "Group Name" : {
+
+    },
+    "GUID: " : {
 
     },
     "Hello, world!" : {
@@ -68,6 +83,9 @@
           }
         }
       }
+    },
+    "Id: " : {
+
     },
     "If you want to join a group provide your email or phone to the owner of the group." : {
 

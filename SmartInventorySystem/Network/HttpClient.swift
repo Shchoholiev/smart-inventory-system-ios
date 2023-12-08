@@ -69,6 +69,7 @@ class HttpClient: ObservableObject {
         do {
             let user: User = try await getAsync("/users/\(GlobalUser.shared.email ?? GlobalUser.shared.phone ?? "")")            
             await GlobalUser.shared.setGroupId(user.groupId)
+            await setAuthenticated(true)
         } catch {
 //            print(error)
         }
@@ -145,13 +146,13 @@ class HttpClient: ObservableObject {
             if let tokens = tokensModel {
                 jwtTokensService.storeTokensInKeychain(tokens: tokens)
             }
+            await setAuthenticated(true)
         } else {
             tokensModel = jwtTokensService.getTokensFromKeychain()
         }
         if let tokens = tokensModel {
             GlobalUser.shared.setUserFromJwt(tokens.accessToken)
             accessToken = tokens.accessToken
-            await setAuthenticated(true)
         } else {
             await setAuthenticated(false)
         }

@@ -16,10 +16,10 @@ struct Device : Codable, Identifiable {
     var isActive: Bool
 }
 
-enum DeviceType: Codable {
-    case unknown // To enforce API users to set type explicitly
-    case rack4ShelfController // Controls a rack of 4 shelves
-    case accessPoint
+enum DeviceType: Int, Codable {
+    case unknown = 0 // To enforce API users to set type explicitly
+    case rack4ShelfController = 1 // Controls a rack of 4 shelves
+    case accessPoint = 2
     
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
@@ -50,4 +50,12 @@ enum DeviceType: Codable {
 struct DeviceStatus : Codable {
     var groupId: String
     var isActive: Bool
+}
+
+struct DeviceCreateDto: Codable {
+    var id: String
+    var name: String
+    var type: DeviceType
+    var guid: String
+    var accessKey: String
 }
