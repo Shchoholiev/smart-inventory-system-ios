@@ -15,7 +15,7 @@ struct UsersView: View {
     @State private var errorMessage: String? = nil
     @State private var isLoading = true
 
-    private var usersService = UsersSerice()
+    private var usersService = UsersService()
     
     var body: some View {
         VStack {

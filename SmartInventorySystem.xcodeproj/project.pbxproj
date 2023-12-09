@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9009D1102B23CFE400E82338 /* DeviceCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */; };
 		9009D1122B23E33600E82338 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D1112B23E33600E82338 /* UsersView.swift */; };
+		9009D1142B23E9C900E82338 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D1132B23E9C900E82338 /* UserDetailsView.swift */; };
 		908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */; };
 		908A340C2B1CEAC800FE47AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340B2B1CEAC800FE47AD /* Assets.xcassets */; };
 		908A340F2B1CEAC800FE47AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCreationView.swift; sourceTree = "<group>"; };
 		9009D1112B23E33600E82338 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		9009D1132B23E9C900E82338 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		908A34042B1CEAC600FE47AD /* Smart Inventory System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Inventory System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartInventorySystemApp.swift; sourceTree = "<group>"; };
 		908A340B2B1CEAC800FE47AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				908A345E2B2172A100FE47AD /* ItemsView.swift */,
 				9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */,
 				9009D1112B23E33600E82338 /* UsersView.swift */,
+				9009D1132B23E9C900E82338 /* UserDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9009D1142B23E9C900E82338 /* UserDetailsView.swift in Sources */,
 				908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */,
 				908A34392B1D627700FE47AD /* LoginModel.swift in Sources */,
 				9009D1102B23CFE400E82338 /* DeviceCreationView.swift in Sources */,

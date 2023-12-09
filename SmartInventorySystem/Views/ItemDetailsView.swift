@@ -226,7 +226,6 @@ struct ItemDetailsView: View {
             .font(.system(size: 16, design: .default))
         )
         .background(Color(UIColor.systemGroupedBackground))
-            
     }
     
     private func loadData() {

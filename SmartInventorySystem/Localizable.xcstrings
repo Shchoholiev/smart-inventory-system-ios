@@ -13,6 +13,9 @@
     "Add Item" : {
 
     },
+    "Add role" : {
+
+    },
     "Add User" : {
 
     },
@@ -141,6 +144,9 @@
     "Register" : {
 
     },
+    "Role Name" : {
+
+    },
     "Save" : {
 
     },
@@ -160,6 +166,9 @@
 
     },
     "Turn On Light" : {
+
+    },
+    "User" : {
 
     },
     "User Profile" : {

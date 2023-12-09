@@ -22,7 +22,7 @@ struct GroupView: View {
     @State private var addUserCount = 0
 
     private var groupsService = GroupsService()
-    private var usersService = UsersSerice()
+    private var usersService = UsersService()
 
     var body: some View {
             VStack(spacing: 10) {

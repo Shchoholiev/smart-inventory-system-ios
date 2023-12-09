@@ -40,6 +40,30 @@ struct SmartInventorySystemApp: App {
                 if (httpClient.isAuthenticated) {
                     if globalUser.groupId != nil {
                         TabView {
+                        
+                            if globalUser.roles.contains("Admin") {
+                                NavigationStack {
+                                    UsersView()
+                                        .navigationDestination(for: User.self) { user in
+                                            UserDetailsView(user: user)
+                                        }
+                                }
+                                .tabItem {
+                                    Image(systemName: "person.crop.rectangle.stack.fill")
+                                        .symbolRenderingMode(.palette)
+                                        .foregroundStyle(Color.blue)
+                                    Text("Manage users")
+                                }
+                                
+                                DeviceCreationView()
+                                    .tabItem {
+                                        Image(systemName: "plus.circle.fill")
+                                            .symbolRenderingMode(.palette)
+                                            .foregroundStyle(Color.blue)
+                                        Text("Create Device")
+                                    }
+                            }
+                            
                             NavigationStack {
                                 ItemsView()
                                     .navigationDestination(for: Item.self) { item in
@@ -96,24 +120,6 @@ struct SmartInventorySystemApp: App {
                                         .foregroundStyle(Color.blue)
                                     Text("Profile")
                                 }
-                            
-                            if globalUser.roles.contains("Admin") {
-                                UsersView()
-                                    .tabItem {
-                                        Image(systemName: "person.crop.rectangle.stack.fill")
-                                            .symbolRenderingMode(.palette)
-                                            .foregroundStyle(Color.blue)
-                                        Text("Manage users")
-                                    }
-                                
-                                DeviceCreationView()
-                                    .tabItem {
-                                        Image(systemName: "plus.circle.fill")
-                                            .symbolRenderingMode(.palette)
-                                            .foregroundStyle(Color.blue)
-                                        Text("Create Device")
-                                    }
-                            }
                         }
                     } else {
                         GroupCreationView()

@@ -17,7 +17,7 @@ class HttpClient: ObservableObject {
     
     private var accessToken: String?
     
-    private var usersService = UsersSerice()
+    private var usersService = UsersService()
     
     @Published var isAuthenticated = false
     
@@ -125,13 +125,21 @@ class HttpClient: ObservableObject {
                 let httpError = try decoder.decode(HttpError.self, from: data)
                 throw httpError
             }
+//            
+//            if httpMethod == .delete {
+//                return Dummy() as! TOut
+//            } else {
+//                let object = try decoder.decode(TOut.self, from: data)
+//                
+//                return object
+//            }
             
-            if httpMethod == .delete {
-                return Dummy() as! TOut
-            } else {
+            do {
                 let object = try decoder.decode(TOut.self, from: data)
                 
                 return object
+            } catch {
+                return Dummy() as! TOut
             }
         } catch {
             print(error)

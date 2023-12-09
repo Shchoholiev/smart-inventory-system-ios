@@ -16,7 +16,7 @@ struct LoginView: View {
     
     @Binding var showLogin: Bool
     
-    private var usersService = UsersSerice()
+    private var usersService = UsersService()
     
     public init(showLogin: Binding<Bool>) {
         self._showLogin = showLogin

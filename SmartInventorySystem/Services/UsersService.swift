@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UsersSerice: ServiceBase {
+class UsersService: ServiceBase {
     
     init() {
         super.init(url: "/users")
@@ -37,10 +37,28 @@ class UsersSerice: ServiceBase {
         return user
     }
     
-    
     func getUsersPage(page: Int = 1, size: Int = 10) async throws -> PagedList<User> {
         let users: PagedList<User> = try await HttpClient.shared.getAsync("\(baseUrl)?page=\(page)&size=\(size)")
         
         return users
+    }
+    
+    func updateUser(userId: String, user: User) async throws -> User {
+        let url = "\(baseUrl)/\(userId)"
+        let updatedUser: User = try await HttpClient.shared.putAsync(url, user)
+        
+        return updatedUser
+    }
+    
+    func addUserRole(userId: String, roleName: String) async throws -> User {
+        let user: User = try await HttpClient.shared.postAsync("\(baseUrl)/\(userId)/roles/\(roleName)", Dummy())
+        
+        return user
+    }
+    
+    func removeUserRole(userId: String, roleName: String) async throws -> User {
+        let user: User = try await HttpClient.shared.deleteAsync("\(baseUrl)/\(userId)/roles/\(roleName)")
+        
+        return user
     }
 }
