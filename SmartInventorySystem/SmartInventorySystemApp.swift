@@ -98,7 +98,7 @@ struct SmartInventorySystemApp: App {
                                 }
                             
                             if globalUser.roles.contains("Admin") {
-                                Text("Manage users")
+                                UsersView()
                                     .tabItem {
                                         Image(systemName: "person.crop.rectangle.stack.fill")
                                             .symbolRenderingMode(.palette)

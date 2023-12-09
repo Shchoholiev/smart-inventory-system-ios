@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Role: Codable {
+struct Role: Codable, Hashable {
     var id: String
     var name: String
 }

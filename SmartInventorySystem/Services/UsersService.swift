@@ -36,4 +36,11 @@ class UsersSerice: ServiceBase {
         
         return user
     }
+    
+    
+    func getUsersPage(page: Int = 1, size: Int = 10) async throws -> PagedList<User> {
+        let users: PagedList<User> = try await HttpClient.shared.getAsync("\(baseUrl)?page=\(page)&size=\(size)")
+        
+        return users
+    }
 }

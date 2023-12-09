@@ -97,7 +97,6 @@ struct ItemsView: View {
         .onAppear {
             loadData()
         }
-        
     }
     
     private func loadData() {

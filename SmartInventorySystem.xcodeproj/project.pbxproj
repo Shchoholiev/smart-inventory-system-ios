@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9009D1102B23CFE400E82338 /* DeviceCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */; };
+		9009D1122B23E33600E82338 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9009D1112B23E33600E82338 /* UsersView.swift */; };
 		908A34082B1CEAC600FE47AD /* SmartInventorySystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */; };
 		908A340C2B1CEAC800FE47AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340B2B1CEAC800FE47AD /* Assets.xcassets */; };
 		908A340F2B1CEAC800FE47AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 908A340E2B1CEAC800FE47AD /* Preview Assets.xcassets */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCreationView.swift; sourceTree = "<group>"; };
+		9009D1112B23E33600E82338 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		908A34042B1CEAC600FE47AD /* Smart Inventory System.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Inventory System.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		908A34072B1CEAC600FE47AD /* SmartInventorySystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartInventorySystemApp.swift; sourceTree = "<group>"; };
 		908A340B2B1CEAC800FE47AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				908A345C2B2034F800FE47AD /* ItemDetailsView.swift */,
 				908A345E2B2172A100FE47AD /* ItemsView.swift */,
 				9009D10F2B23CFE400E82338 /* DeviceCreationView.swift */,
+				9009D1112B23E33600E82338 /* UsersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				908A344F2B1FEB7A00FE47AD /* DevicesService.swift in Sources */,
 				908A342B2B1D15AB00FE47AD /* GlobalUser.swift in Sources */,
 				908A34532B20069600FE47AD /* ShelvesView.swift in Sources */,
+				9009D1122B23E33600E82338 /* UsersView.swift in Sources */,
 				908A341B2B1CFCF300FE47AD /* RegisterModel.swift in Sources */,
 				908A34512B1FFEE800FE47AD /* PagedList.swift in Sources */,
 				908A34372B1D617500FE47AD /* LoginView.swift in Sources */,
