@@ -28,9 +28,6 @@ struct GroupView: View {
             VStack(spacing: 10) {
                 if isLoading {
                     ProgressView()
-                    .onAppear {
-                        loadGroupData()
-                    }
                 } else {
                 HStack {
                     Text("Your Group")
@@ -154,6 +151,9 @@ struct GroupView: View {
         }
         .padding(.top)
         .background(isLoading ? Color(.systemBackground) : Color(UIColor.systemGroupedBackground))
+        .onAppear {
+            loadGroupData()
+        }
     }
 
     var isFormValid: Bool {

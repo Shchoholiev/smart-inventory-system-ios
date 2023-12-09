@@ -35,9 +35,6 @@ struct ShelvesView: View {
             
             if isLoading {
                 ProgressView()
-                .onAppear {
-                    loadData()
-                }
             } else {
                 if shelves.count > 0 {
                     ScrollView {
@@ -80,6 +77,9 @@ struct ShelvesView: View {
         }
         .padding(.top)
         .background(Color(UIColor.systemGroupedBackground))
+        .onAppear {
+            loadData()
+        }
     }
     
     private func loadData() {

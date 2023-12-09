@@ -58,9 +58,6 @@ struct DevicesView: View {
             
             if isLoading {
                 ProgressView()
-                .onAppear {
-                    loadData()
-                }
             } else {
                 if devices.count > 0 {
                     ScrollView {
@@ -98,6 +95,9 @@ struct DevicesView: View {
         }
         .padding(.top)
         .background(Color(UIColor.systemGroupedBackground))
+        .onAppear {
+            loadData()
+        }
     }
     
     private func loadData() {
@@ -122,6 +122,7 @@ struct DevicesView: View {
                 let devices = try await devicesService.getDevicesPage(groupId)
                 self.devices = devices.items
                 
+                newDeviceId = ""
                 errorMessage = nil
             } catch let httpError as HttpError {
                 errorMessage = httpError.message
