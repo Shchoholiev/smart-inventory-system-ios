@@ -70,7 +70,7 @@ struct ItemDetailsView: View {
                                     .padding(.bottom, 5)
                             }
                             
-                            Text("\(item.isTaken ? "Taken" : "Available")")
+                            Text(LocalizedStringKey(item.isTaken ? "Taken" : "Available"))
                                 .padding([.top, .bottom], 3)
                                 .padding([.leading, .trailing], 6)
                                 .font(.system(size: 14))
@@ -167,7 +167,7 @@ struct ItemDetailsView: View {
                                                 Text(history.type.toString())
                                                     .font(.headline)
                                                 
-                                                Text("\(history.isTaken ? "Taken" : "Available")")
+                                                Text(LocalizedStringKey(history.isTaken ? "Taken" : "Available"))
                                                     .padding([.top, .bottom], 3)
                                                     .padding([.leading, .trailing], 6)
                                                     .font(.system(size: 14))
