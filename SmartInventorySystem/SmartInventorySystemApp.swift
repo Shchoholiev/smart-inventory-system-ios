@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SmartInventorySystemApp: App {
+    // Shared instances of HttpClient and GlobalUser to manage network requests and user information globally.
     @StateObject private var httpClient = HttpClient.shared
     @StateObject private var globalUser = GlobalUser.shared
     
+    // State variables to manage login screen display and loading state.
     @State var showLogin: Bool = false
     @State private var isLoading = true
     
@@ -20,6 +22,7 @@ struct SmartInventorySystemApp: App {
     var body: some Scene {
         WindowGroup {
             if isLoading {
+                // Display a loading view with an app icon and a progress indicator while the app is loading.
                 VStack {
                     Image("AppIconImage")
                         .resizable()
@@ -30,6 +33,7 @@ struct SmartInventorySystemApp: App {
                     
                     ProgressView()
                     .onAppear {
+                        // Check authentication status when the view appears.
                         Task {
                             await HttpClient.shared.checkAuthentication()
                             isLoading = false
@@ -37,10 +41,14 @@ struct SmartInventorySystemApp: App {
                     }
                 }
             } else {
+                // Main content of the app, displayed after loading is complete.
                 if (httpClient.isAuthenticated) {
+                    // If the user is authenticated and part of a group, display the main tab view.
                     if globalUser.groupId != nil {
                         TabView {
-                        
+                            
+                            // Conditional tab views based on user roles.
+                            // Admin users have additional tabs for user and device management.
                             if globalUser.roles.contains("Admin") {
                                 NavigationStack {
                                     UsersView()
@@ -95,6 +103,7 @@ struct SmartInventorySystemApp: App {
                                 Text("Shelves")
                             }
                             
+                            // Additional tabs for users with 'Owner' role.
                             if globalUser.roles.contains("Owner") {
                                 GroupView()
                                     .tabItem {
@@ -122,9 +131,11 @@ struct SmartInventorySystemApp: App {
                                 }
                         }
                     } else {
+                        // If the user is authenticated but not part of a group, display the group creation view.
                         GroupCreationView()
                     }
                 } else {
+                    // If the user is not authenticated, display login or register view based on `showLogin` state.
                     if showLogin {
                         LoginView(showLogin: $showLogin)
                     } else {

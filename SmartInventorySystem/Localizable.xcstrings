@@ -22,7 +22,21 @@
       }
     },
     "Activate" : {
-
+        "extractionState" : "manual",
+        "localizations" : {
+          "en" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Activate"
+            }
+          },
+          "uk" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Активувати"
+            }
+          }
+        }
     },
     "Add Item" : {
       "extractionState" : "manual",

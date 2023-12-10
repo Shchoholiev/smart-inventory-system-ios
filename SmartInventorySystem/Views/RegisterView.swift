@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// `RegisterView` is a SwiftUI view for handling user registration.
+/// It provides text fields for user input (name, email, phone, password) and buttons for registration and switching to the login view.
 struct RegisterView: View {
     @State private var name: String = ""
     @State private var email: String = ""
@@ -14,11 +16,12 @@ struct RegisterView: View {
     @State private var password: String = ""
     
     @State private var errorMessage: String? = nil
-    
     @Binding var showLogin: Bool
     
     private var usersService = UsersService()
     
+    /// Initializes a new `RegisterView` with a binding to control the login view display.
+    /// - Parameter showLogin: A binding to a Boolean value that determines whether to show the login view.
     public init(showLogin: Binding<Bool>) {
         self._showLogin = showLogin
     }
@@ -101,10 +104,15 @@ struct RegisterView: View {
         .padding(30)
     }
     
+    /// A computed property that checks if the form is valid.
+    /// The form is valid if either the email or phone is non-empty and the password is non-empty.
     var isFormValid: Bool {
         (!email.isEmpty || !phone.isEmpty) && !password.isEmpty
     }
 
+    /// Handles the user registration process.
+    /// It creates a `RegisterModel` with user inputs and calls the `register` method on `UsersService`.
+    /// It also handles error messages by updating `errorMessage`.
     func registerUser() {
         let registerModel = RegisterModel(name, email, phone, password)
         Task {
@@ -118,6 +126,7 @@ struct RegisterView: View {
     }
 }
 
+//MARK: - Preview
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView(showLogin: .constant(false))
